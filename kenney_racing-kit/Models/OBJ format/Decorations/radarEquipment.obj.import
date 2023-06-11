@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsoha5biblfp0"
+path="res://.godot/imported/radarEquipment.obj-170c71b77badff58798d127f7b165d22.mesh"
+
+[deps]
+
+files=["res://.godot/imported/radarEquipment.obj-170c71b77badff58798d127f7b165d22.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/radarEquipment.obj"
+dest_files=["res://.godot/imported/radarEquipment.obj-170c71b77badff58798d127f7b165d22.mesh", "res://.godot/imported/radarEquipment.obj-170c71b77badff58798d127f7b165d22.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

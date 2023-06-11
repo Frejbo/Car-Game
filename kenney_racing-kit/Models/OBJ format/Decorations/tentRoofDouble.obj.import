@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bblq4rdmbcvfy"
+path="res://.godot/imported/tentRoofDouble.obj-d8e4fef2b223a672b0fc87ba0d6e3926.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tentRoofDouble.obj-d8e4fef2b223a672b0fc87ba0d6e3926.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/tentRoofDouble.obj"
+dest_files=["res://.godot/imported/tentRoofDouble.obj-d8e4fef2b223a672b0fc87ba0d6e3926.mesh", "res://.godot/imported/tentRoofDouble.obj-d8e4fef2b223a672b0fc87ba0d6e3926.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

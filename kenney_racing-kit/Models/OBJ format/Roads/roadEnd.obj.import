@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5qtgcfgat3ti"
+path="res://.godot/imported/roadEnd.obj-907d09ce3e2879646184faf8702debbd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadEnd.obj-907d09ce3e2879646184faf8702debbd.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Roads/roadEnd.obj"
+dest_files=["res://.godot/imported/roadEnd.obj-907d09ce3e2879646184faf8702debbd.mesh", "res://.godot/imported/roadEnd.obj-907d09ce3e2879646184faf8702debbd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

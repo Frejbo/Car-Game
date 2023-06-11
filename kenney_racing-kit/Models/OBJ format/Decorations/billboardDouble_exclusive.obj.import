@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chhsum2kmtrui"
+path="res://.godot/imported/billboardDouble_exclusive.obj-eb8d14229202da701baff8b61e64a650.mesh"
+
+[deps]
+
+files=["res://.godot/imported/billboardDouble_exclusive.obj-eb8d14229202da701baff8b61e64a650.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/billboardDouble_exclusive.obj"
+dest_files=["res://.godot/imported/billboardDouble_exclusive.obj-eb8d14229202da701baff8b61e64a650.mesh", "res://.godot/imported/billboardDouble_exclusive.obj-eb8d14229202da701baff8b61e64a650.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

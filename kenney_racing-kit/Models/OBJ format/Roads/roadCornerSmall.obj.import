@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gbb8dww5jl0k"
+path="res://.godot/imported/roadCornerSmall.obj-601da7c5bb561865b92c30bccfa4a53c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadCornerSmall.obj-601da7c5bb561865b92c30bccfa4a53c.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerSmall.obj"
+dest_files=["res://.godot/imported/roadCornerSmall.obj-601da7c5bb561865b92c30bccfa4a53c.mesh", "res://.godot/imported/roadCornerSmall.obj-601da7c5bb561865b92c30bccfa4a53c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

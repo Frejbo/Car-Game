@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://v8osk16q5ayi"
+path="res://.godot/imported/pylon.obj-e61524ac433d6ffeee6e13562df916ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pylon.obj-e61524ac433d6ffeee6e13562df916ae.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/pylon.obj"
+dest_files=["res://.godot/imported/pylon.obj-e61524ac433d6ffeee6e13562df916ae.mesh", "res://.godot/imported/pylon.obj-e61524ac433d6ffeee6e13562df916ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

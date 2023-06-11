@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cx3prx447q5d"
+path="res://.godot/imported/roadRamp.obj-6d750648168026330c4bfeaa3112dfeb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadRamp.obj-6d750648168026330c4bfeaa3112dfeb.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Roads/roadRamp.obj"
+dest_files=["res://.godot/imported/roadRamp.obj-6d750648168026330c4bfeaa3112dfeb.mesh", "res://.godot/imported/roadRamp.obj-6d750648168026330c4bfeaa3112dfeb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

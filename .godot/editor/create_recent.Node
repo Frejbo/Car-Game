@@ -1,3 +1,6 @@
+MultiMeshInstance3D
+MeshInstance3D
+GridMap
 MultiplayerSpawner
 Node3D
 Node
@@ -8,13 +11,10 @@ HBoxContainer
 Button
 CanvasLayer
 MultiplayerSynchronizer
-MultiMeshInstance3D
 AudioStreamPlayer3D
 GPUParticles3D
 Label
 DirectionalLight3D
-GridMap
-MeshInstance3D
 WorldEnvironment
 Camera3D
 CollisionShape3D

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlkjd6v2kmtfl"
+path="res://.godot/imported/barrierWall.obj-cbf4a97e196e27205686872c057c4346.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrierWall.obj-cbf4a97e196e27205686872c057c4346.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/barrierWall.obj"
+dest_files=["res://.godot/imported/barrierWall.obj-cbf4a97e196e27205686872c057c4346.mesh", "res://.godot/imported/barrierWall.obj-cbf4a97e196e27205686872c057c4346.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

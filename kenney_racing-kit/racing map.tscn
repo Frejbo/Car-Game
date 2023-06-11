@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhoexhxxa4fb2"]
 
-[ext_resource type="MeshLibrary" uid="uid://7iyetwg420t5" path="res://kenney_racing-kit/map_assets.meshlib" id="1_mn5hh"]
+[ext_resource type="MeshLibrary" uid="uid://7iyetwg420t5" path="res://map_assets.meshlib" id="1_31pkc"]
 
 [node name="GridMap" type="GridMap"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
-mesh_library = ExtResource("1_mn5hh")
+mesh_library = ExtResource("1_31pkc")
 cell_size = Vector3(1, 0.5, 1)
 cell_center_y = false
 data = {

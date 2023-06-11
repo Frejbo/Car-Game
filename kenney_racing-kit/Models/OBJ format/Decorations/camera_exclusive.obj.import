@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwytfwld8upnb"
+path="res://.godot/imported/camera_exclusive.obj-00356e0bc24208031ae1c80b6ff47795.mesh"
+
+[deps]
+
+files=["res://.godot/imported/camera_exclusive.obj-00356e0bc24208031ae1c80b6ff47795.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/camera_exclusive.obj"
+dest_files=["res://.godot/imported/camera_exclusive.obj-00356e0bc24208031ae1c80b6ff47795.mesh", "res://.godot/imported/camera_exclusive.obj-00356e0bc24208031ae1c80b6ff47795.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

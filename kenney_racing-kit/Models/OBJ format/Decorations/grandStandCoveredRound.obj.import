@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk4xorn7ty5vl"
+path="res://.godot/imported/grandStandCoveredRound.obj-a2e2e8621d6e57ea6c4c98999ffe355b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/grandStandCoveredRound.obj-a2e2e8621d6e57ea6c4c98999ffe355b.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/grandStandCoveredRound.obj"
+dest_files=["res://.godot/imported/grandStandCoveredRound.obj-a2e2e8621d6e57ea6c4c98999ffe355b.mesh", "res://.godot/imported/grandStandCoveredRound.obj-a2e2e8621d6e57ea6c4c98999ffe355b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

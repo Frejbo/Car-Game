@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chmunv154p740"
+path="res://.godot/imported/treeLarge.obj-ec6824f5274f692799775279d634225c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/treeLarge.obj-ec6824f5274f692799775279d634225c.mesh"]
+
+source_file="res://kenney_racing-kit/Models/OBJ format/Decorations/treeLarge.obj"
+dest_files=["res://.godot/imported/treeLarge.obj-ec6824f5274f692799775279d634225c.mesh", "res://.godot/imported/treeLarge.obj-ec6824f5274f692799775279d634225c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
