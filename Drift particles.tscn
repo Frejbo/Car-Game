@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhssko6cno7dw"]
+[gd_scene load_steps=8 format=3 uid="uid://bhssko6cno7dw"]
 
-[ext_resource type="Material" uid="uid://cy51bavi5iy6" path="res://kenney_racing-kit/Drift particles.tres" id="1_fggvh"]
+[ext_resource type="Texture2D" uid="uid://dyo53ev3n1jbe" path="res://smoke_07.png" id="1_os5vo"]
 [ext_resource type="Script" path="res://Drift particles.gd" id="1_tm0r5"]
 
 [sub_resource type="Gradient" id="Gradient_ckta0"]
@@ -28,8 +28,21 @@ tangential_accel_max = 0.1
 angle_max = 359.0
 color_ramp = SubResource("GradientTexture1D_yj1mp")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrg3d"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.619608, 0.470588, 0.411765, 0.231373)
+albedo_texture = ExtResource("1_os5vo")
+albedo_texture_msdf = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
 [sub_resource type="QuadMesh" id="QuadMesh_prp11"]
-material = ExtResource("1_fggvh")
+material = SubResource("StandardMaterial3D_hrg3d")
 flip_faces = true
 size = Vector2(0.5, 0.5)
 

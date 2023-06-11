@@ -1,6 +1,6 @@
 extends Node3D
 
-const STEERING_RATE := .4
+const STEERING_RATE := .35
 const STEERING_SENSITIVITY := .5
 const ENGINE_POWER := 100
 const ENGINE_SPEED := 30
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Drifting particles
 	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
-		if wheel.get_skidinfo() < 1: # skidding
+		if wheel.get_skidinfo() < .95: # skidding
 			drift(wheel)
 	
 	

@@ -7,3 +7,8 @@ res://Drift particles.tscn
 res://menu.tscn
 res://car.gd
 res://maps/1.tscn
+res://kenney_racing-kit/Models/OBJ format/grounds.meshlib
+res://kenney_racing-kit/Models/OBJ format/roads.meshlib
+res://kenney_racing-kit/Models/OBJ format/Roads.tscn
+res://kenney_racing-kit/Models/OBJ format/Decorations.tscn
+res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib
