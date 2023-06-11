@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhssko6cno7dw"]
+
+[ext_resource type="Material" uid="uid://cy51bavi5iy6" path="res://kenney_racing-kit/Drift particles.tres" id="1_fggvh"]
+[ext_resource type="Script" path="res://Drift particles.gd" id="1_tm0r5"]
+
+[sub_resource type="Gradient" id="Gradient_ckta0"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.532258, 1)
+colors = PackedColorArray(0.87691, 0.781805, 0.752001, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yj1mp"]
+gradient = SubResource("Gradient_ckta0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mmhh5"]
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -0.5
+initial_velocity_max = 0.5
+angular_velocity_min = -0.1
+angular_velocity_max = 0.1
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+tangential_accel_min = -0.1
+tangential_accel_max = 0.1
+angle_max = 359.0
+color_ramp = SubResource("GradientTexture1D_yj1mp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_prp11"]
+material = ExtResource("1_fggvh")
+flip_faces = true
+size = Vector2(0.5, 0.5)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+visibility_aabb = AABB(-0.05, -0.05, -0.05, 0.1, 0.1, 0.1)
+process_material = SubResource("ParticleProcessMaterial_mmhh5")
+draw_pass_1 = SubResource("QuadMesh_prp11")
+script = ExtResource("1_tm0r5")
