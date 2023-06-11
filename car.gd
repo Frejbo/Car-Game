@@ -10,12 +10,24 @@ const ZOOM_SENSITIVITY := .2
 @onready var Vehicle = $VehicleBody3D
 @onready var standard_brake_force = $VehicleBody3D.brake
 
+func _enter_tree():
+	set_multiplayer_authority(str(name).to_int())
+	
 func _ready() -> void:
 	$VehicleBody3D/engine.playing = true
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if is_multiplayer_authority():
+		$camera_rotation_x/camera_rotation_y/Camera3D.current = true
 
 var speed := 0.0
 func _physics_process(delta: float) -> void:
+	
+	# Drifting particles
+	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
+		if wheel.get_skidinfo() < 1: # skidding
+			drift(wheel)
+	
+	
+	if not is_multiplayer_authority(): return
 	
 	if Input.is_action_pressed("forward"):
 		set_engine_force(-ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
@@ -45,12 +57,8 @@ func _physics_process(delta: float) -> void:
 	# reset if car is outside world:
 	if Vehicle.position.y < -5:
 		Vehicle.position.y = 5
-	
-	
-	# Drifting particles
-	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
-		if wheel.get_skidinfo() < 1: # skidding
-			drift(wheel)
+
+
 
 func drift(wheel : VehicleWheel3D):
 	var particle = preload("res://Drift particles.tscn").instantiate()
@@ -89,6 +97,8 @@ func set_brake_force(force:float) -> void:
 		wheel.brake = force
 
 func _input(event: InputEvent) -> void:
+	if not is_multiplayer_authority(): return
+	
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		# camera movement
 		

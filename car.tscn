@@ -1,8 +1,28 @@
-[gd_scene load_steps=18 format=3 uid="uid://b37fefq04q7n4"]
+[gd_scene load_steps=19 format=3 uid="uid://b37fefq04q7n4"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_exqwt"]
 [ext_resource type="AudioStream" uid="uid://b34msm4sac68q" path="res://engine.ogg" id="2_mdhdl"]
 [ext_resource type="FontFile" uid="uid://be4xcsjidytqk" path="res://Anton-Regular.ttf" id="2_qbq4h"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kgdnk"]
+properties/0/path = NodePath("VehicleBody3D:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("VehicleBody3D:rotation")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("VehicleBody3D/engine:pitch_scale")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("VehicleBody3D/engine:volume_db")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath("VehicleBody3D:steering")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("VehicleBody3D:engine_force")
+properties/5/spawn = true
+properties/5/sync = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4noph"]
 resource_name = "carTire"
@@ -19,7 +39,6 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mlw8"]
 resource_name = "_defaultMat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2gfgx"]
@@ -284,22 +303,22 @@ expand_margin_top = 10.0
 [node name="Player" type="Node3D"]
 script = ExtResource("1_exqwt")
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_kgdnk")
+
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 mass = 100.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
-brake = 0.2
 
 [node name="engine" type="AudioStreamPlayer3D" parent="VehicleBody3D"]
 stream = ExtResource("2_mdhdl")
 volume_db = -10.0
 unit_size = 1.0
-pitch_scale = 2.5
 doppler_tracking = 2
 
 [node name="FL wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, -0.76)
-brake = 0.2
 use_as_steering = true
 wheel_radius = 0.3
 wheel_friction_slip = 7.0
@@ -312,7 +331,6 @@ skeleton = NodePath("")
 
 [node name="FR wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, -0.76)
-brake = 0.2
 use_as_steering = true
 wheel_radius = 0.3
 wheel_friction_slip = 7.0
@@ -325,7 +343,6 @@ skeleton = NodePath("")
 
 [node name="BL wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.56)
-brake = 0.2
 use_as_traction = true
 wheel_radius = 0.3
 wheel_friction_slip = 2.5
@@ -338,7 +355,6 @@ skeleton = NodePath("")
 
 [node name="BR wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0.56)
-brake = 0.2
 use_as_traction = true
 wheel_radius = 0.3
 wheel_friction_slip = 2.5
@@ -372,7 +388,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="camera_rotation_x/camera_rotation_y"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -1.74846e-07)
-current = true
 fov = 65.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dog2bsa8pald1"]
+
+[ext_resource type="Script" path="res://multiplayer.gd" id="1_pjnaf"]
+[ext_resource type="PackedScene" uid="uid://dl6dh7lfyq6ph" path="res://world.tscn" id="2_awovr"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_pjnaf")
+
+[node name="world" parent="." instance=ExtResource("2_awovr")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -33.0
+offset_right = 57.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="host" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "HOST"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="IP" type="LineEdit" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "localhost"
+placeholder_text = "IP of host"
+alignment = 1
+max_length = 15
+
+[node name="join" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "JOIN"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/join" to="." method="_on_join_pressed"]
