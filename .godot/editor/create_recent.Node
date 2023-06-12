@@ -1,8 +1,12 @@
+Camera3D
+Control
+Label
+Button
+Panel
+TextureRect
 MultiplayerSynchronizer
 MultiplayerSpawner
-Panel
 HBoxContainer
-Label
 AspectRatioContainer
 Label3D
 VBoxContainer
@@ -18,11 +22,9 @@ VoxelGI
 MultiMeshInstance3D
 GridMap
 Node
-Button
 AudioStreamPlayer3D
 GPUParticles3D
 DirectionalLight3D
 WorldEnvironment
-Camera3D
 VehicleWheel3D
 VehicleBody3D

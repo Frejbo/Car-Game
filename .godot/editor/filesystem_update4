@@ -1,23 +1,11 @@
-res://kenney_racing-kit/Models/OBJ format/Decorations.tscn
-res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib
-res://kenney_racing-kit/Models/OBJ format/Roads.tscn
-res://kenney_racing-kit/Models/OBJ format/Roads.meshlib
-res://maps/1.tscn
-res://world.tscn
-res://car.tscn
-res://kenney_racing-kit/racing map.tscn
-res://Drift particles.tscn
-res://menu.tscn
-res://car.gd
-res://kenney_racing-kit/Models/OBJ format/Ground.tscn
-res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib
-res://maps/map.gd
-res://multiplayer.gd
-res://manu.tscn
-res://Lobby.tscn
-res://info.gd
 res://main.tscn
-res://menu.gd
+res://Theme.tres
+res://multiplayer.gd
+res://world.tscn
+res://maps/1.tscn
+res://Lobby.tscn
+res://menu.tscn
 res://PlayerMenuCard.tscn
+res://car.tscn
+res://menu.gd
 res://Lobby.gd
-res://PlayerMenuCard.gd

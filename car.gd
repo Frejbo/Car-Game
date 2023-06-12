@@ -14,6 +14,7 @@ func _enter_tree():
 	
 func _ready() -> void:
 	$VehicleBody3D/engine.playing = true
+	print("CHECK")
 	if is_multiplayer_authority():
 		$camera_rotation_x/camera_rotation_y/Camera3D.current = true
 		$VehicleBody3D/PlayerName.hide()

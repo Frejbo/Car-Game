@@ -1,4 +1,6 @@
 extends Node
 
+signal display_names_changed
+
 var PlayerName := "Unknown player"
-var peer
+var display_names = {}

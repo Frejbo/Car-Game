@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkfgeooa7bp5d"]
+
+[ext_resource type="FontFile" uid="uid://be4xcsjidytqk" path="res://Anton-Regular.ttf" id="1_25mya"]
+
+[resource]
+default_font = ExtResource("1_25mya")
+Label/font_sizes/font_size = 48

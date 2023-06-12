@@ -1,16 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4u1rsufagt4b"]
+[gd_scene load_steps=3 format=3 uid="uid://b1k6e72r5b4r3"]
 
-[ext_resource type="Script" path="res://Lobby.gd" id="1_ovdkm"]
+[ext_resource type="Script" path="res://Lobby.gd" id="1_cp7iu"]
+[ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="2_kwkjj"]
 
-[node name="Lobby" type="CanvasLayer"]
-script = ExtResource("1_ovdkm")
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cp7iu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="VBoxContainer"]
-_spawnable_scenes = PackedStringArray("res://PlayerMenuCard.tscn")
-spawn_path = NodePath("..")
+[node name="wait_for_host" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -281.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_kwkjj")
+theme_override_font_sizes/font_size = 24
+text = "Wait for the host to start the game..."
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[node name="start" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_kwkjj")
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
