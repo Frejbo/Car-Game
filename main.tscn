@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dog2bsa8pald1"]
+
+[ext_resource type="Script" path="res://multiplayer.gd" id="1_sbd55"]
+[ext_resource type="PackedScene" uid="uid://dl6dh7lfyq6ph" path="res://world.tscn" id="2_ktmxh"]
+[ext_resource type="PackedScene" uid="uid://c4bwsc68cijj3" path="res://menu.tscn" id="3_t23oi"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_sbd55")
+
+[node name="world" parent="." instance=ExtResource("2_ktmxh")]
+visible = false
+
+[node name="menu" parent="." instance=ExtResource("3_t23oi")]
+
+[connection signal="hostGame" from="menu" to="." method="hostGame"]
+[connection signal="joinGame" from="menu" to="." method="joinGame"]

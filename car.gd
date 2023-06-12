@@ -16,24 +16,42 @@ func _ready() -> void:
 	$VehicleBody3D/engine.playing = true
 	if is_multiplayer_authority():
 		$camera_rotation_x/camera_rotation_y/Camera3D.current = true
+		$VehicleBody3D/PlayerName.hide()
+		$VehicleBody3D/PlayerName.text = Info.PlayerName
+	else:
+		$CanvasLayer.hide()
 
 var speed := 0.0
 func _physics_process(delta: float) -> void:
+	
+	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
+		# Drifting particles
+		if wheel.get_skidinfo() < 1: # skidding
+			dirt_particle(wheel)
+		
+		# Brake on ground
+		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
+			wheel.brake = 5 * wheel.get_skidinfo()
+			Vehicle.engine_force *= .8
+			dirt_particle(wheel)
 	
 	
 	
 	if not is_multiplayer_authority(): return
 	
+	
+	
 	if Input.is_action_pressed("forward"):
+		set_brake_force(0)
 		set_engine_force(-ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
 	elif Input.is_action_pressed("back"):
 		if speed > 0:
 			#bromsa
-			set_brake_force(4)
+			set_brake_force(7)
 		else:
 			#backa
 			set_brake_force(0)
-			set_engine_force(ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1))
+			set_engine_force(ENGINE_POWER*.5 * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1))
 	else:
 		set_engine_force(0)
 	engine_sound(speed)
@@ -46,16 +64,6 @@ func _physics_process(delta: float) -> void:
 		Vehicle.steering *= 1.9 * STEERING_SENSITIVITY
 	
 	
-	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
-		# Drifting particles
-		if wheel.get_skidinfo() < 1: # skidding
-			dirt_particle(wheel)
-		
-		# Brake on ground
-		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
-			wheel.brake = 5 * wheel.get_skidinfo()
-			Vehicle.engine_force *= .8
-			dirt_particle(wheel)
 	
 	
 	# place camera at car:

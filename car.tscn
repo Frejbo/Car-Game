@@ -23,6 +23,9 @@ properties/4/sync = true
 properties/5/path = NodePath("VehicleBody3D:engine_force")
 properties/5/spawn = true
 properties/5/sync = true
+properties/6/path = NodePath("VehicleBody3D/PlayerName:text")
+properties/6/spawn = true
+properties/6/sync = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4noph"]
 resource_name = "carTire"
@@ -304,7 +307,6 @@ expand_margin_top = 10.0
 script = ExtResource("1_exqwt")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_interval = 3.0
 replication_config = SubResource("SceneReplicationConfig_kgdnk")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
@@ -323,7 +325,7 @@ doppler_tracking = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, -0.76)
 use_as_steering = true
 wheel_radius = 0.3
-wheel_friction_slip = 10.0
+wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 
 [node name="wheel_frontLeft" type="MeshInstance3D" parent="VehicleBody3D/FL wheel"]
@@ -335,7 +337,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, -0.76)
 use_as_steering = true
 wheel_radius = 0.3
-wheel_friction_slip = 10.0
+wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 
 [node name="wheel_frontRight" type="MeshInstance3D" parent="VehicleBody3D/FR wheel"]
@@ -347,7 +349,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 3.0
+wheel_friction_slip = 1.75
 suspension_stiffness = 40.0
 
 [node name="wheel_backLeft" type="MeshInstance3D" parent="VehicleBody3D/BL wheel"]
@@ -359,7 +361,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 3.0
+wheel_friction_slip = 1.75
 suspension_stiffness = 40.0
 
 [node name="wheel_backRight" type="MeshInstance3D" parent="VehicleBody3D/BR wheel"]
@@ -382,6 +384,11 @@ skeleton = NodePath("")
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, 1, 0, 5.96046e-08, 0, 0.5, 1.15)
 mesh = SubResource("ArrayMesh_xoogf")
 skeleton = NodePath("")
+
+[node name="PlayerName" type="Label3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+text = "Player name"
 
 [node name="camera_rotation_x" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

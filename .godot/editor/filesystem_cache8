@@ -1,18 +1,22 @@
 2a60927148abd1d33b818b535e306557
-::res://::1686563633
+::res://::1686574041
 Anton-Regular.ttf::FontFile::2728444035226403110::1686504995::1686505000::1::::<><>::
-car.gd::GDScript::-1::1686527660::0::1::::<>Node3D<>::
-car.tscn::PackedScene::4418079410336299591::1686528823::0::1::::<><>::res://car.gd<>uid://b34msm4sac68q<>uid://be4xcsjidytqk
+car.gd::GDScript::-1::1686573569::0::1::::<>Node3D<>::
+car.tscn::PackedScene::4418079410336299591::1686573812::0::1::::<><>::res://car.gd<>uid://b34msm4sac68q<>uid://be4xcsjidytqk
 Drift particles.gd::GDScript::-1::1686514931::0::1::::<>GPUParticles3D<>::
-Drift particles.tscn::PackedScene::2916012935865918524::1686528746::0::1::::<><>::uid://dyo53ev3n1jbe<>res://Drift particles.gd
+Drift particles.tscn::PackedScene::2916012935865918524::1686573682::0::1::::<><>::uid://dyo53ev3n1jbe<>res://Drift particles.gd
 drift.wav::AudioStreamWAV::2791518504614586680::1686513026::1686513028::1::::<><>::
 engine.ogg::AudioStreamOggVorbis::4412336684526710014::1686514025::1686514092::1::::<><>::
 icon.svg::CompressedTexture2D::1145211409866008096::1686495558::1686495565::1::::<><>::
+info.gd::GDScript::-1::1686572686::0::1::::<>Node<>::
+Lobby.tscn::PackedScene::4464794681129373815::1686573682::0::1::::<><>::
+main.tscn::PackedScene::8155934220074444092::1686573682::0::1::::<><>::res://multiplayer.gd<>uid://dl6dh7lfyq6ph<>uid://c4bwsc68cijj3
 map_assets.meshlib::MeshLibrary::2264023401693336176::1686500341::0::1::::<><>::uid://chf5bkd2viqen<>uid://xcfwx3wu2ah0<>uid://crhy3r3advxl2
-menu.tscn::PackedScene::8155934220074444092::1686528746::0::1::::<><>::res://multiplayer.gd<>uid://dl6dh7lfyq6ph
-multiplayer.gd::GDScript::-1::1686519086::0::1::::<>Node<>::
+menu.gd::GDScript::-1::1686573206::0::1::::<>CanvasLayer<>::
+menu.tscn::PackedScene::6811750283212355378::1686573820::0::1::::<><>::res://menu.gd
+multiplayer.gd::GDScript::-1::1686573327::0::1::::<>Node<>::
 smoke_07.png::CompressedTexture2D::8874567342786138154::1686511356::1686511360::1::::<><>::
-world.tscn::PackedScene::7995531391009113697::1686528745::0::1::::<><>::uid://bwaiqby448asb
+world.tscn::PackedScene::7995531391009113697::1686573682::0::1::::<><>::uid://bwaiqby448asb
 ::res://baked light/::1686528061
 world.VoxelGI_data.res::VoxelGIData::3863774714258953980::1686528061::0::1::::<><>::
 ::res://kenney_car-kit/::1686498104
@@ -77,18 +81,20 @@ wheelTractorDarkBack.png::CompressedTexture2D::6503458455406265799::1658617522::
 wheelTractorDarkFront.png::CompressedTexture2D::1803579058353069816::1658617522::1686498104::1::::<><>::
 wheelTractorFront.png::CompressedTexture2D::4787334996238620364::1658617522::1686498104::1::::<><>::
 wheelTruck.png::CompressedTexture2D::8864055806788397227::1658617522::1686498104::1::::<><>::
-::res://kenney_racing-kit/::1686528746
+::res://kenney_racing-kit/::1686573682
 License.txt::TextFile::-1::1686497961::0::1::::<><>::
 Preview.png::CompressedTexture2D::2505502204641361327::1686497972::1686498003::1::::<><>::
-racing map.tscn::PackedScene::7679769590573358169::1686528746::0::1::::<><>::uid://7iyetwg420t5
+racing map.tscn::PackedScene::7679769590573358169::1686573682::0::1::::<><>::uid://7iyetwg420t5
 Sample.png::CompressedTexture2D::2822106805689395043::1686497972::1686498003::1::::<><>::
 ::res://kenney_racing-kit/Models/::1686499576
-::res://kenney_racing-kit/Models/OBJ format/::1686528746
-Decorations.meshlib::MeshLibrary::5976566098397420542::1686525534::0::1::::<><>::uid://chf5bkd2viqen<>uid://xcfwx3wu2ah0<>uid://crhy3r3advxl2
-Decorations.tscn::PackedScene::8365270832892600653::1686525592::0::1::::<><>::uid://df3arkpihd4wy<>uid://dk5fbso8j30c6<>uid://c77y01538b4p5<>uid://dlkjd6v2kmtfl<>uid://exle4j50b8lx<>uid://61imrirpdnp6<>uid://chhsum2kmtrui<>uid://cl6vujyaxg7yn<>uid://bhq0y0xj78akt<>uid://cwytfwld8upnb<>uid://bjlcqtd1xnx7a<>uid://doro8wcrdk77l<>uid://c1gfqrjcf31b5<>uid://bk44irtgrfdp<>uid://b0jp5w1ufusa2<>uid://cpvs3ilu7pl63<>uid://d0mfvyll1wih6<>uid://b7jmahevfo0rc<>uid://batl0rbbjb11d<>uid://bk4xorn7ty5vl<>uid://d3ot7lmogdw7<>uid://ctlh5j8ve4eoj<>uid://8csqfvsgguma<>uid://b385ix2d6y3kc<>uid://bqhthpc17rfg7<>uid://dgcflw6qv0u2j<>uid://5b6uw7s21aje<>uid://df1aakllkack4<>uid://cm2fgv5x7vet3<>uid://cw6f0exnpfr5d<>uid://bswhc3kvvks5c<>uid://delvqdkg7p0kp<>uid://di2ngsfebfjlv<>uid://c050uats5qmjj<>uid://v8osk16q5ayi<>uid://y3l1qrq6iujp<>uid://dmofxwgk6xowu<>uid://b81kcfhoe7ks<>uid://c5whvjs1n8uey<>uid://dsoha5biblfp0<>uid://0enuebmmj300<>uid://ctsb1tt4073oa<>uid://bf2ooliwn48rp<>uid://b3p0bcunbmwb7<>uid://mm87cjit1phj<>uid://bqn5wm86xoaqm<>uid://lbxtm7gs4qpq<>uid://ccnxe1nlef0ed<>uid://ycsxpqxeq82q<>uid://qbw4m2w3h6nk<>uid://cbwj2rqmom365<>uid://dkuem20ghbq5h<>uid://dhi2l42biqtui<>uid://dd1hlckok60bi<>uid://chs1fih1w1rc<>uid://ho812vyb3uhn<>uid://cxxcbxj25twyu<>uid://dt22qp8gtj873<>uid://bblq4rdmbcvfy<>uid://chmunv154p740<>uid://vkd3v6skkp7k
-Grounds.meshlib::MeshLibrary::771609386544754228::1686522435::0::1::::<><>::
-Roads.meshlib::MeshLibrary::2280444841221718952::1686526237::0::1::::<><>::
-Roads.tscn::PackedScene::4233151074206858296::1686528746::0::1::::<><>::uid://dn8t0ull7mpsp<>uid://6gagqhta3ygn<>uid://11vyqv4avdrc<>uid://dh8gelivd8ciq<>uid://cxmxmurgiljhy<>uid://c3jl2b2wwc5im<>uid://sudsniidcqqj<>uid://g3bvcsaibpxh<>uid://ccvaitupn3car<>uid://dyiw0abn5o2su<>uid://c1m2f5lt2uyd<>uid://12n3x730gyhd<>uid://4mshydv7ygbl<>uid://b7w1xvqvgymq0<>uid://c0ob0y3es3mxh<>uid://dnqq1pjwh8qyr<>uid://gbb8dww5jl0k<>uid://bes22co0gkqwb<>uid://db6fgvh7ajqmy<>uid://c5qtgcfgat3ti<>uid://dag3xms427kgy<>uid://qfniolajwwf7<>uid://cx3prx447q5d<>uid://cy8ubtlunody7<>uid://cx8hevrimurx8<>uid://baf2fm2gllfxx<>uid://ile7a3ncpdqr<>uid://bre12h5ybufbf<>uid://dfalpy604obvb<>uid://unoybymexqi7<>uid://c0y4d73mb3umt<>uid://7oi1mj25qn2q<>uid://kp27bg8jwxka<>uid://bdpeicfylmdsr<>uid://cg86gwba7jdu1<>uid://dk2orfrw1wnsp<>uid://cv21no1abl81a<>uid://kri034vjvcb4<>uid://biygn64561v6o<>uid://clafynte3ul87<>uid://c6iouxc5xi38a<>uid://botjwlwhhootn<>uid://chmgnrdd6voqh
+::res://kenney_racing-kit/Models/OBJ format/::1686574041
+Decorations.meshlib::MeshLibrary::5976566098397420542::1686564639::0::1::::<><>::uid://chf5bkd2viqen<>uid://xcfwx3wu2ah0<>uid://crhy3r3advxl2
+Decorations.tscn::PackedScene::8365270832892600653::1686566721::0::1::::<><>::uid://df3arkpihd4wy<>uid://dk5fbso8j30c6<>uid://c77y01538b4p5<>uid://dlkjd6v2kmtfl<>uid://exle4j50b8lx<>uid://61imrirpdnp6<>uid://chhsum2kmtrui<>uid://cl6vujyaxg7yn<>uid://bhq0y0xj78akt<>uid://cwytfwld8upnb<>uid://bjlcqtd1xnx7a<>uid://doro8wcrdk77l<>uid://c1gfqrjcf31b5<>uid://bk44irtgrfdp<>uid://b0jp5w1ufusa2<>uid://cpvs3ilu7pl63<>uid://d0mfvyll1wih6<>uid://b7jmahevfo0rc<>uid://batl0rbbjb11d<>uid://bk4xorn7ty5vl<>uid://d3ot7lmogdw7<>uid://ctlh5j8ve4eoj<>uid://8csqfvsgguma<>uid://b385ix2d6y3kc<>uid://bqhthpc17rfg7<>uid://dgcflw6qv0u2j<>uid://5b6uw7s21aje<>uid://df1aakllkack4<>uid://cm2fgv5x7vet3<>uid://cw6f0exnpfr5d<>uid://bswhc3kvvks5c<>uid://delvqdkg7p0kp<>uid://di2ngsfebfjlv<>uid://c050uats5qmjj<>uid://v8osk16q5ayi<>uid://y3l1qrq6iujp<>uid://dmofxwgk6xowu<>uid://b81kcfhoe7ks<>uid://c5whvjs1n8uey<>uid://dsoha5biblfp0<>uid://0enuebmmj300<>uid://ctsb1tt4073oa<>uid://bf2ooliwn48rp<>uid://b3p0bcunbmwb7<>uid://mm87cjit1phj<>uid://bqn5wm86xoaqm<>uid://lbxtm7gs4qpq<>uid://ccnxe1nlef0ed<>uid://ycsxpqxeq82q<>uid://qbw4m2w3h6nk<>uid://cbwj2rqmom365<>uid://dkuem20ghbq5h<>uid://dhi2l42biqtui<>uid://dd1hlckok60bi<>uid://chs1fih1w1rc<>uid://ho812vyb3uhn<>uid://cxxcbxj25twyu<>uid://dt22qp8gtj873<>uid://bblq4rdmbcvfy<>uid://chmunv154p740<>uid://vkd3v6skkp7k
+Ground.tscn::PackedScene::4399265899933032218::1686565845::0::1::::<><>::uid://qkcd7tojvcxq
+Grounds.meshlib::MeshLibrary::771609386544754228::1686565404::0::1::::<><>::
+PlayerMenuCard.tscn::PackedScene::3531408618348731037::1686574022::0::1::::<><>::
+Roads.meshlib::MeshLibrary::2280444841221718952::1686564433::0::1::::<><>::
+Roads.tscn::PackedScene::4233151074206858296::1686566720::0::1::::<><>::uid://dn8t0ull7mpsp<>uid://6gagqhta3ygn<>uid://11vyqv4avdrc<>uid://dh8gelivd8ciq<>uid://cxmxmurgiljhy<>uid://c3jl2b2wwc5im<>uid://sudsniidcqqj<>uid://g3bvcsaibpxh<>uid://ccvaitupn3car<>uid://dyiw0abn5o2su<>uid://c1m2f5lt2uyd<>uid://12n3x730gyhd<>uid://4mshydv7ygbl<>uid://b7w1xvqvgymq0<>uid://c0ob0y3es3mxh<>uid://dnqq1pjwh8qyr<>uid://gbb8dww5jl0k<>uid://bes22co0gkqwb<>uid://db6fgvh7ajqmy<>uid://c5qtgcfgat3ti<>uid://dag3xms427kgy<>uid://qfniolajwwf7<>uid://cx3prx447q5d<>uid://cy8ubtlunody7<>uid://cx8hevrimurx8<>uid://baf2fm2gllfxx<>uid://ile7a3ncpdqr<>uid://bre12h5ybufbf<>uid://dfalpy604obvb<>uid://unoybymexqi7<>uid://c0y4d73mb3umt<>uid://7oi1mj25qn2q<>uid://kp27bg8jwxka<>uid://bdpeicfylmdsr<>uid://cg86gwba7jdu1<>uid://dk2orfrw1wnsp<>uid://cv21no1abl81a<>uid://kri034vjvcb4<>uid://biygn64561v6o<>uid://clafynte3ul87<>uid://c6iouxc5xi38a<>uid://botjwlwhhootn<>uid://chmgnrdd6voqh
 ::res://kenney_racing-kit/Models/OBJ format/Decorations/::1686524290
 bannerTowerGreen.obj::Mesh::7568039753658079680::1686497967::1686523980::1::::<><>::
 bannerTowerRed.obj::Mesh::7923388159399247447::1686497967::1686523980::1::::<><>::
@@ -202,5 +208,5 @@ roadStraightLongBump.obj::Mesh::5545265803796902990::1686497970::1686523991::1::
 roadStraightLongBumpRound.obj::Mesh::6966097508495321154::1686497970::1686523991::1::::<><>::
 roadStraightLongMid.obj::Mesh::3408874024424014219::1686497970::1686523991::1::::<><>::
 roadStraightSkew.obj::Mesh::5289324220888449047::1686497970::1686523991::1::::<><>::
-::res://maps/::1686528746
-1.tscn::PackedScene::3931089643330758365::1686528746::0::1::::<><>::uid://crfdf2bq8fvfi<>uid://7qwuf6llo8v1<>uid://k81j8x8rgf5e
+::res://maps/::1686573848
+1.tscn::PackedScene::3931089643330758365::1686573848::0::1::::<><>::uid://crfdf2bq8fvfi<>uid://7qwuf6llo8v1

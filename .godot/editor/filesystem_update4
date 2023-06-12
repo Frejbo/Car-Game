@@ -13,3 +13,11 @@ res://kenney_racing-kit/Models/OBJ format/Ground.tscn
 res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib
 res://maps/map.gd
 res://multiplayer.gd
+res://manu.tscn
+res://Lobby.tscn
+res://info.gd
+res://main.tscn
+res://menu.gd
+res://PlayerMenuCard.tscn
+res://Lobby.gd
+res://PlayerMenuCard.gd
