@@ -307,7 +307,7 @@ script = ExtResource("1_exqwt")
 replication_config = SubResource("SceneReplicationConfig_kgdnk")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
-mass = 100.0
+mass = 500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
 
@@ -321,8 +321,8 @@ doppler_tracking = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, -0.76)
 use_as_steering = true
 wheel_radius = 0.3
-wheel_friction_slip = 7.0
-suspension_stiffness = 55.0
+wheel_friction_slip = 10.0
+suspension_stiffness = 40.0
 
 [node name="wheel_frontLeft" type="MeshInstance3D" parent="VehicleBody3D/FL wheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
@@ -333,8 +333,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, -0.76)
 use_as_steering = true
 wheel_radius = 0.3
-wheel_friction_slip = 7.0
-suspension_stiffness = 55.0
+wheel_friction_slip = 10.0
+suspension_stiffness = 40.0
 
 [node name="wheel_frontRight" type="MeshInstance3D" parent="VehicleBody3D/FR wheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
@@ -345,8 +345,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 2.5
-suspension_stiffness = 55.0
+wheel_friction_slip = 5.0
+suspension_stiffness = 40.0
 
 [node name="wheel_backLeft" type="MeshInstance3D" parent="VehicleBody3D/BL wheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
@@ -357,8 +357,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 2.5
-suspension_stiffness = 55.0
+wheel_friction_slip = 5.0
+suspension_stiffness = 40.0
 
 [node name="wheel_backRight" type="MeshInstance3D" parent="VehicleBody3D/BR wheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
@@ -388,7 +388,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="camera_rotation_x/camera_rotation_y"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -1.74846e-07)
-fov = 65.0
+fov = 37.8493
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

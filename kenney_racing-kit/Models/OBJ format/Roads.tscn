@@ -264,6 +264,7 @@ data = PackedVector3Array(-2.6191, 0.1066, 2.8934, -3, 0.1066, 2.9183, -2.6191, 
 
 [node name="RoadStraight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("1_4lx6u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight"]
@@ -273,6 +274,7 @@ shape = SubResource("ConcavePolygonShape3D_pxyj2")
 
 [node name="RoadStartPositions" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("2_rju30")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStartPositions"]
@@ -281,7 +283,8 @@ mesh = ExtResource("2_rju30")
 shape = SubResource("ConcavePolygonShape3D_t8j6n")
 
 [node name="RoadStart" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 0, -0.5)
+visible = false
 mesh = ExtResource("3_0csf7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStart"]
@@ -291,6 +294,7 @@ shape = SubResource("ConcavePolygonShape3D_cd1cj")
 
 [node name="RoadBump" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("1_nlkdn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadBump"]
@@ -300,6 +304,7 @@ shape = SubResource("ConcavePolygonShape3D_6dxfw")
 
 [node name="RoadCrossing" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+visible = false
 mesh = ExtResource("5_xfxx4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCrossing"]
@@ -309,6 +314,7 @@ shape = SubResource("ConcavePolygonShape3D_4v6jt")
 
 [node name="RoadCurvedSplit" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("6_tpsrw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCurvedSplit"]
@@ -318,6 +324,7 @@ shape = SubResource("ConcavePolygonShape3D_6ke51")
 
 [node name="RoadCurved" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("7_qkmeg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCurved"]
@@ -327,6 +334,7 @@ shape = SubResource("ConcavePolygonShape3D_xp4rm")
 
 [node name="RoadCornerLargeSand" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, -0.5)
+visible = false
 mesh = ExtResource("8_jfo3s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLargeSand"]
@@ -336,6 +344,7 @@ shape = SubResource("ConcavePolygonShape3D_sibx0")
 
 [node name="RoadCornerLarge" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("9_d0a4v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLarge"]
@@ -345,6 +354,7 @@ shape = SubResource("ConcavePolygonShape3D_nxvcs")
 
 [node name="RoadCornerLargeSandInner" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, -0.5)
+visible = false
 mesh = ExtResource("10_qxfuq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLargeSandInner"]
@@ -354,6 +364,7 @@ shape = SubResource("ConcavePolygonShape3D_558na")
 
 [node name="RoadCornerLargerSand" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, -0.5)
+visible = false
 mesh = ExtResource("11_7qplh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLargerSand"]
@@ -363,6 +374,7 @@ shape = SubResource("ConcavePolygonShape3D_4rl1r")
 
 [node name="RoadCornerLarger" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("12_5c4er")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLarger"]
@@ -372,6 +384,7 @@ shape = SubResource("ConcavePolygonShape3D_y7um4")
 
 [node name="RoadCornerLargerSandInner" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, -0.5)
+visible = false
 mesh = ExtResource("13_bv7nu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerLargerSandInner"]
@@ -381,6 +394,7 @@ shape = SubResource("ConcavePolygonShape3D_kk63l")
 
 [node name="RoadCornerSmall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("14_vbx1s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerSmall"]
@@ -390,6 +404,7 @@ shape = SubResource("ConcavePolygonShape3D_tywsc")
 
 [node name="RoadCornerSmallSand" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.001, -0.5)
+visible = false
 mesh = ExtResource("15_kutpd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerSmallSand"]
@@ -399,6 +414,7 @@ shape = SubResource("ConcavePolygonShape3D_4if87")
 
 [node name="RoadCornerSmallSquare" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("16_2812o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerSmallSquare"]
@@ -408,6 +424,7 @@ shape = SubResource("ConcavePolygonShape3D_tuspq")
 
 [node name="RoadEnd" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("17_006uu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadEnd"]
@@ -417,6 +434,7 @@ shape = SubResource("ConcavePolygonShape3D_ig737")
 
 [node name="RoadPitEntry" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("18_fvdwj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadPitEntry"]
@@ -426,6 +444,7 @@ shape = SubResource("ConcavePolygonShape3D_n7xbe")
 
 [node name="RoadPitStraight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("19_5j8sf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadPitStraight"]
@@ -435,6 +454,7 @@ shape = SubResource("ConcavePolygonShape3D_r7hqv")
 
 [node name="RoadRamp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("20_xtb5j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRamp"]
@@ -444,6 +464,7 @@ shape = SubResource("ConcavePolygonShape3D_qe8he")
 
 [node name="RoadRampLong" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = SubResource("ArrayMesh_uvtax")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRampLong"]
@@ -453,6 +474,7 @@ shape = SubResource("ConcavePolygonShape3D_kvgxa")
 
 [node name="RoadRampLongCurved" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("21_vv8sy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRampLongCurved"]
@@ -462,6 +484,7 @@ shape = SubResource("ConcavePolygonShape3D_o6ede")
 
 [node name="RoadRampLongCurvedWall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.19209e-07, -0.5)
+visible = false
 mesh = ExtResource("22_hj0k0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRampLongCurvedWall"]
@@ -471,6 +494,7 @@ shape = SubResource("ConcavePolygonShape3D_hkspi")
 
 [node name="RoadRampLongWall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("23_u2ep7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRampLongWall"]
@@ -480,6 +504,7 @@ shape = SubResource("ConcavePolygonShape3D_jftt6")
 
 [node name="RoadRampWall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("24_12sku")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadRampWall"]
@@ -489,6 +514,7 @@ shape = SubResource("ConcavePolygonShape3D_ai3bi")
 
 [node name="RoadSide" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("25_mregb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSide"]
@@ -498,6 +524,7 @@ shape = SubResource("ConcavePolygonShape3D_tdptu")
 
 [node name="RoadSplit" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("26_6nlh6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplit"]
@@ -507,6 +534,7 @@ shape = SubResource("ConcavePolygonShape3D_x5638")
 
 [node name="RoadSplitLarge" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("27_b87no")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplitLarge"]
@@ -516,6 +544,7 @@ shape = SubResource("ConcavePolygonShape3D_m7su7")
 
 [node name="RoadSplitLarger" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("28_nw64n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplitLarger"]
@@ -525,6 +554,7 @@ shape = SubResource("ConcavePolygonShape3D_7s28h")
 
 [node name="RoadSplitRound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("29_mckf4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplitRound"]
@@ -534,6 +564,7 @@ shape = SubResource("ConcavePolygonShape3D_odfhb")
 
 [node name="RoadSplitRoundLarge" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("30_23uao")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplitRoundLarge"]
@@ -543,6 +574,7 @@ shape = SubResource("ConcavePolygonShape3D_degle")
 
 [node name="RoadSplitSmall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("31_5h36t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadSplitSmall"]
@@ -552,6 +584,7 @@ shape = SubResource("ConcavePolygonShape3D_hom3s")
 
 [node name="RoadStraightArrow" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("32_lukbr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightArrow"]
@@ -561,6 +594,7 @@ shape = SubResource("ConcavePolygonShape3D_pw2nx")
 
 [node name="RoadStraightBridge" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("33_88ese")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightBridge"]
@@ -569,7 +603,7 @@ mesh = ExtResource("33_88ese")
 shape = SubResource("ConcavePolygonShape3D_gp82x")
 
 [node name="RoadStraightBridgeMid" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.5)
 mesh = ExtResource("34_dye26")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightBridgeMid"]
@@ -579,6 +613,7 @@ shape = SubResource("ConcavePolygonShape3D_h5ud3")
 
 [node name="RoadStraightBridgeStart" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("35_d4qat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightBridgeStart"]
@@ -588,6 +623,7 @@ shape = SubResource("ConcavePolygonShape3D_woy2i")
 
 [node name="RoadStraightLong" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("36_gotf6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLong"]
@@ -597,6 +633,7 @@ shape = SubResource("ConcavePolygonShape3D_udf1m")
 
 [node name="RoadStraightLongBump" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("37_3qqxq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLongBump"]
@@ -606,6 +643,7 @@ shape = SubResource("ConcavePolygonShape3D_5roqy")
 
 [node name="RoadStraightLongBumpRound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("38_n6h1c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLongBumpRound"]
@@ -615,6 +653,7 @@ shape = SubResource("ConcavePolygonShape3D_cyh06")
 
 [node name="RoadStraightLongMid" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("39_l4co7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLongMid"]
@@ -624,6 +663,7 @@ shape = SubResource("ConcavePolygonShape3D_a2x6n")
 
 [node name="RoadStraightSkew" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("40_5lkdw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightSkew"]
@@ -632,7 +672,7 @@ mesh = ExtResource("40_5lkdw")
 shape = SubResource("ConcavePolygonShape3D_01hdo")
 
 [node name="RoadCornerBridgeSmall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, 0, -0.503928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, -0.107, -0.503928)
 mesh = ExtResource("4_qhsmm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerBridgeSmall"]
@@ -641,7 +681,7 @@ mesh = ExtResource("4_qhsmm")
 shape = SubResource("ConcavePolygonShape3D_or0e2")
 
 [node name="RoadCornerBridgeLarge" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, 0, -0.503928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, -0.107, -0.503928)
 mesh = ExtResource("2_5bye3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerBridgeLarge"]
@@ -650,7 +690,7 @@ mesh = ExtResource("2_5bye3")
 shape = SubResource("ConcavePolygonShape3D_gun5k")
 
 [node name="RoadCornerBridgeLarger" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, 0, -0.503928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501991, -0.107, -0.503928)
 mesh = ExtResource("3_2tswd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadCornerBridgeLarger"]

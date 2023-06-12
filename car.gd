@@ -1,10 +1,10 @@
 extends Node3D
 
 const STEERING_RATE := .35
-const STEERING_SENSITIVITY := .5
-const ENGINE_POWER := 100
+const STEERING_SENSITIVITY := .35
+const ENGINE_POWER := 400
 const ENGINE_SPEED := 30
-const MOUSE_SENSITIVITY := .5
+const MOUSE_SENSITIVITY := .4
 const ZOOM_SENSITIVITY := .2
 
 @onready var Vehicle = $VehicleBody3D
