@@ -40,6 +40,14 @@ func show_game():
 func add_player(peer_id):
 	var player = Player.instantiate()
 	player.name = str(peer_id)
+	var start_pos = await $world/map.get_unique_start_pos()
+	print(start_pos)
+	if start_pos == null:
+		OS.alert("Server is full.")
+		return false
+	player.get_node("VehicleBody3D").global_transform = start_pos
+	player.get_node("VehicleBody3D").global_position = Vector3(20, 5, 20)
+	print(peer_id)
 	$world/Players.add_child(player)
 
 func remove_player(peer_id):

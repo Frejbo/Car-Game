@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3xbjchw0kxoc"]
+
+[ext_resource type="ArrayMesh" uid="uid://qkcd7tojvcxq" path="res://kenney_racing-kit/Models/OBJ format/Grounds/grass.obj" id="1_gjd46"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_86a60"]
+data = PackedVector3Array(0, 0, 0, 0, 0, 1, -1, 0, 0, -1, 0, 1, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, -1, 0, 0, -1, 0, 1, -1, 0, 0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Grass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = ExtResource("1_gjd46")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grass" groups=["Ground"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_86a60")

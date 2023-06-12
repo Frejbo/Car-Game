@@ -8,7 +8,6 @@ const MOUSE_SENSITIVITY := .4
 const ZOOM_SENSITIVITY := .2
 
 @onready var Vehicle = $VehicleBody3D
-@onready var standard_brake_force = $VehicleBody3D.brake
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
@@ -21,10 +20,6 @@ func _ready() -> void:
 var speed := 0.0
 func _physics_process(delta: float) -> void:
 	
-	# Drifting particles
-	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
-		if wheel.get_skidinfo() < .95: # skidding
-			drift(wheel)
 	
 	
 	if not is_multiplayer_authority(): return
@@ -34,10 +29,10 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("back"):
 		if speed > 0:
 			#bromsa
-			set_brake_force(2)
+			set_brake_force(4)
 		else:
 			#backa
-			set_brake_force(standard_brake_force)
+			set_brake_force(0)
 			set_engine_force(ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1))
 	else:
 		set_engine_force(0)
@@ -51,6 +46,18 @@ func _physics_process(delta: float) -> void:
 		Vehicle.steering *= 1.9 * STEERING_SENSITIVITY
 	
 	
+	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
+		# Drifting particles
+		if wheel.get_skidinfo() < 1: # skidding
+			dirt_particle(wheel)
+		
+		# Brake on ground
+		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
+			wheel.brake = 5 * wheel.get_skidinfo()
+			Vehicle.engine_force *= .8
+			dirt_particle(wheel)
+	
+	
 	# place camera at car:
 	$camera_rotation_x.position = Vehicle.position + Vector3(0, 1, 0)
 	
@@ -60,9 +67,12 @@ func _physics_process(delta: float) -> void:
 
 
 
-func drift(wheel : VehicleWheel3D):
+func dirt_particle(wheel : VehicleWheel3D):
+	if speed < 1: return
 	var particle = preload("res://Drift particles.tscn").instantiate()
-	particle.lifetime = particle.lifetime * (1 - wheel.get_skidinfo())
+	if wheel.get_skidinfo() < .95:
+		# If not skidding, but for example driving on dirt, the lifetime should not be multiplied by 0
+		particle.lifetime = particle.lifetime * (1 - wheel.get_skidinfo())
 	wheel.add_child(particle)
 
 @onready var engine_volume = $VehicleBody3D/engine.volume_db
@@ -80,7 +90,7 @@ func get_velocity(object = $VehicleBody3D) -> Vector3:
 	var v_len = object.linear_velocity.length()
 	var v_nor = object.linear_velocity.normalized()
 	
-	var velocity : Vector3
+	var velocity := Vector3.ZERO
 	velocity.x = b.x.dot(v_nor) * v_len
 	velocity.y = b.y.dot(v_nor) * v_len
 	velocity.z = b.z.dot(v_nor) * v_len

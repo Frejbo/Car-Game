@@ -304,9 +304,11 @@ expand_margin_top = 10.0
 script = ExtResource("1_exqwt")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 3.0
 replication_config = SubResource("SceneReplicationConfig_kgdnk")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+collision_mask = 3
 mass = 500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
@@ -345,7 +347,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 5.0
+wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 
 [node name="wheel_backLeft" type="MeshInstance3D" parent="VehicleBody3D/BL wheel"]
@@ -357,7 +359,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0.56)
 use_as_traction = true
 wheel_radius = 0.3
-wheel_friction_slip = 5.0
+wheel_friction_slip = 3.0
 suspension_stiffness = 40.0
 
 [node name="wheel_backRight" type="MeshInstance3D" parent="VehicleBody3D/BR wheel"]
@@ -388,7 +390,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="camera_rotation_x/camera_rotation_y"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -1.74846e-07)
-fov = 37.8493
+fov = 60.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
