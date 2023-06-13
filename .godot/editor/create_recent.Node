@@ -1,10 +1,10 @@
+MultiplayerSynchronizer
 Label
 Camera3D
 Control
 Button
 Panel
 TextureRect
-MultiplayerSynchronizer
 MultiplayerSpawner
 HBoxContainer
 AspectRatioContainer

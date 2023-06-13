@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwaiqby448asb"]
+[gd_scene load_steps=8 format=3 uid="uid://bwaiqby448asb"]
 
 [ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="1_gxdgl"]
 [ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="2_f22h1"]
+[ext_resource type="Script" path="res://maps/startPositions.gd" id="3_wqihk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4342g"]
 albedo_color = Color(0.309804, 0.568627, 0.341176, 1)
@@ -57,6 +58,7 @@ mesh = SubResource("PlaneMesh_kbjo3")
 shape = SubResource("ConcavePolygonShape3D_jo50g")
 
 [node name="startPositions" type="Node3D" parent="."]
+script = ExtResource("3_wqihk")
 
 [node name="1" type="Area3D" parent="startPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328, 0.05, 0.26)

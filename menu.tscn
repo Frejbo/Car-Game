@@ -64,6 +64,7 @@ text = "JOIN"
 process_mode = 1
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 

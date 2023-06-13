@@ -11,3 +11,5 @@ res://info.gd
 res://menu.gd
 res://multiplayer.gd
 res://Lobby.gd
+res://maps/startPositions.gd
+res://Drift particles.gd

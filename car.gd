@@ -14,6 +14,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	Info.game_started.connect(start)
+	print("Ready! " , multiplayer.get_unique_id())
 
 func start() -> void:
 	$VehicleBody3D/engine.playing = true
@@ -26,6 +27,17 @@ func start() -> void:
 	else:
 		$CanvasLayer.hide()
 
+#func place_car():
+#	var startPositions = get_parent().get_parent().get_node("map/startPositions")
+#	var new_transform = await startPositions.get_start_position(multiplayer.get_unique_id())
+#	print(new_transform)
+#	if new_transform == null:
+#		OS.alert("Server is full or already running.")
+#		get_tree().quit()
+#
+#	global_rotation = new_transform[0]
+#	position = new_transform[1]
+
 var speed := 0.0
 func _physics_process(delta: float) -> void:
 	
@@ -37,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		# Brake on ground
 		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
 			wheel.brake = 5 * wheel.get_skidinfo()
-			Vehicle.engine_force *= .8
+			Vehicle.engine_force *= .1 # TODO doesnt work
 			dirt_particle(wheel)
 	
 	
