@@ -1,6 +1,7 @@
 extends Node
 
-signal display_names_changed
+signal global_info_changed
+signal game_started
 
 var PlayerName := "Unknown player"
-var display_names = {}
+var global_info = {"seed":randi(), "players":{}}

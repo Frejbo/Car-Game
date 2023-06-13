@@ -6,15 +6,15 @@ var peer = ENetMultiplayerPeer.new()
 const Player = preload("res://car.tscn")
 
 @rpc("any_peer", "reliable", "call_local")
-func add_display_name(n) -> void:
+func add_display_name(namn) -> void:
 	var id = multiplayer.get_remote_sender_id()
-	Info.display_names[id] = n
-	Info.display_names_changed.emit()
+	Info.global_info["players"][id] = {"display_name": namn}
+	Info.global_info_changed.emit()
 
 @rpc("reliable", "call_local")
 func remove_display_name(peer_id):
-	Info.display_names.erase(peer_id)
-	Info.display_names_changed.emit()
+	Info.global_info["players"].erase(peer_id)
+	Info.global_info_changed.emit()
 
 
 func hostGame() -> void:
@@ -29,15 +29,16 @@ func hostGame() -> void:
 	add_player(multiplayer.get_unique_id())
 	add_display_name.rpc(Info.PlayerName)
 	
-	multiplayer.peer_connected.connect(send_previous_playernames)
+	multiplayer.peer_connected.connect(send_previous_global_info)
 
-func send_previous_playernames(new_peer_id):
-	add_previous_display_names.rpc_id(new_peer_id, Info.display_names)
+func send_previous_global_info(new_peer_id):
+	add_previous_global_info.rpc_id(new_peer_id, Info.global_info)
 
 @rpc("reliable")
-func add_previous_display_names(dict:Dictionary):
-	Info.display_names.merge(dict)
-	Info.display_names_changed.emit()
+func add_previous_global_info(dict:Dictionary):
+	Info.global_info["players"].merge(dict["players"])
+	Info.global_info["seed"] = dict["seed"]
+	Info.global_info_changed.emit()
 
 func joinGame(IPtext : String) -> void:
 	peer.create_client(IPtext, PORT)
@@ -50,11 +51,6 @@ func joinGame(IPtext : String) -> void:
 
 func connected():
 	add_display_name.rpc(Info.PlayerName)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		print(multiplayer.get_unique_id(), "  ", Info.display_names)
-
 
 
 func add_player(peer_id):

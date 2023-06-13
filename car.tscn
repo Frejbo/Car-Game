@@ -304,6 +304,7 @@ expand_margin_left = 20.0
 expand_margin_top = 10.0
 
 [node name="Player" type="Node3D"]
+process_mode = 4
 script = ExtResource("1_exqwt")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
@@ -386,7 +387,7 @@ mesh = SubResource("ArrayMesh_xoogf")
 skeleton = NodePath("")
 
 [node name="PlayerName" type="Label3D" parent="VehicleBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74497, 0)
 billboard = 1
 text = "Player name"
 

@@ -63,5 +63,9 @@ text = "JOIN"
 [node name="world" parent="." instance=ExtResource("2_qewpa")]
 process_mode = 1
 
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="pressed" from="VBoxContainer/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/join" to="." method="_on_join_pressed"]

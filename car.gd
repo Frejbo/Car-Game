@@ -9,12 +9,16 @@ const ZOOM_SENSITIVITY := .2
 
 @onready var Vehicle = $VehicleBody3D
 
-func _enter_tree():
+func _enter_tree() -> void:
 	set_multiplayer_authority(str(name).to_int())
-	
+
 func _ready() -> void:
+	Info.game_started.connect(start)
+
+func start() -> void:
 	$VehicleBody3D/engine.playing = true
-	print("CHECK")
+	process_mode = Node.PROCESS_MODE_INHERIT
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if is_multiplayer_authority():
 		$camera_rotation_x/camera_rotation_y/Camera3D.current = true
 		$VehicleBody3D/PlayerName.hide()

@@ -1,11 +1,13 @@
-res://main.tscn
+res://car.tscn
 res://Theme.tres
-res://multiplayer.gd
 res://world.tscn
+res://main.tscn
 res://maps/1.tscn
 res://Lobby.tscn
 res://menu.tscn
 res://PlayerMenuCard.tscn
-res://car.tscn
+res://car.gd
+res://info.gd
 res://menu.gd
+res://multiplayer.gd
 res://Lobby.gd

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c4bwsc68cijj3" path="res://menu.tscn" id="3_t23oi"]
 
 [node name="main" type="Node"]
-process_mode = 3
 script = ExtResource("1_sbd55")
 
 [node name="menu" parent="." instance=ExtResource("3_t23oi")]

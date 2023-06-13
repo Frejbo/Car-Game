@@ -5,10 +5,6 @@ signal joinGame
 
 const lobby = preload("res://Lobby.tscn")
 
-func _ready() -> void:
-	get_tree().paused = true
-#	pass
-
 func valid_name() -> bool:
 	if $VBoxContainer/name.text == "":
 		OS.alert("Please enter a name first")
@@ -36,6 +32,8 @@ func _on_join_pressed() -> void:
 
 @rpc("call_local", "reliable")
 func start():
-	get_tree().paused = false
+	Info.game_started.emit()
 	$Lobby.queue_free()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _process(_delta: float) -> void:
+	$Label.text = str(Info.global_info["seed"])
