@@ -4,8 +4,11 @@ res://main.tscn
 res://maps/1.tscn
 res://Lobby.tscn
 res://menu.tscn
-res://PlayerMenuCard.tscn
 res://car.tscn
-res://Players.gd
+res://Bilar/Sedan/sedan.tscn
+res://PlayerMenuCard.tscn
 res://car.gd
-res://Drift particles.tscn
+res://kenney_racing-kit/Models/OBJ format/Roads.tscn
+res://kenney_racing-kit/Models/OBJ format/Roads.meshlib
+res://multiplayer.gd
+res://Players.gd

@@ -13,8 +13,7 @@ func _ready() -> void:
 				connected = true
 		)
 
-func update_start_positions(node: Node) -> void:
-#	await get_tree().create_timer(1).timeout
+func update_start_positions(_node:Node) -> void:
 	if not connected:
 		return
 	
@@ -22,21 +21,10 @@ func update_start_positions(node: Node) -> void:
 		pos.remove_from_group("taken")
 	
 	
-#	if multiplayer.is_server():
-#		for pos in startPositions.get_children():
-#			pos.remove_from_group("taken")
-#			pos.name = "available"
 	var cars = []
 	for player in get_children():
 		cars.append(player.name.to_int())
 	cars.sort()
-#		func sort_ascending(a, b):
-#			if a < b:
-#				return true
-#			return false
-#	)
-	
-	print(multiplayer.get_unique_id(), "   ", cars)
 	
 	for player_name in cars:
 		var player = get_node(str(player_name))
@@ -46,5 +34,5 @@ func update_start_positions(node: Node) -> void:
 				continue
 			
 			pos.add_to_group("taken")
-			player.global_position = pos.global_position
+			player.position = pos.global_position
 			break

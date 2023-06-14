@@ -1,4 +1,5 @@
 MultiplayerSynchronizer
+VehicleWheel3D
 Label
 Camera3D
 Control
@@ -26,5 +27,4 @@ AudioStreamPlayer3D
 GPUParticles3D
 DirectionalLight3D
 WorldEnvironment
-VehicleWheel3D
 VehicleBody3D

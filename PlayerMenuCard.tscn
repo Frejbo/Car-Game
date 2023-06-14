@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://oacb5fduk8fd"]
 
-[ext_resource type="Texture2D" uid="uid://e0ydgtymt550" path="res://kenney_car-kit/Previews/suv.png" id="1_g835y"]
+[ext_resource type="Texture2D" uid="uid://e0ydgtymt550" path="res://Bilar/Suv/suv.png" id="1_j3jnt"]
 [ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="2_fklwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4h83"]
@@ -37,7 +37,7 @@ size_flags_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_g835y")
+texture = ExtResource("1_j3jnt")
 expand_mode = 2
 
 [node name="name" type="Label" parent="HBoxContainer"]

@@ -1,9 +1,9 @@
 extends Node3D
 
-const STEERING_RATE := .35
-const STEERING_SENSITIVITY := .35
-const ENGINE_POWER := 400
-const ENGINE_SPEED := 30
+@export var STEERING_RATE : float = .35
+@export var STEERING_SENSITIVITY : float = .35
+@export var ENGINE_POWER : float = 400
+@export var ENGINE_SPEED : float = 30
 const MOUSE_SENSITIVITY := .4
 const ZOOM_SENSITIVITY := .2
 
@@ -15,7 +15,10 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	$CanvasLayer.hide()
 	Info.game_started.connect(start)
-
+	
+	# sometimes the game freezes when the user tries to drive forward without turning the wheel first. This is probably a bug with godot. To fix this I set the steering to a small amount when the car enters the scene. This amount steering should immidiatly disappear.
+	Vehicle.steering = .0001
+	
 func start() -> void:
 	$CanvasLayer.show()
 	$VehicleBody3D/engine.playing = true
@@ -67,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_pressed("right"):
 			Vehicle.steering = clamp(Vehicle.steering - STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
 		else:
-			Vehicle.steering *= 1.9 * STEERING_SENSITIVITY
+			Vehicle.steering *= 225 * STEERING_SENSITIVITY * delta
 	
 	
 	
@@ -79,7 +82,7 @@ func _physics_process(delta: float) -> void:
 		# Brake on ground
 		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
 			wheel.brake = 5 * wheel.get_skidinfo()
-			Vehicle.engine_force *= .99
+			Vehicle.engine_force *= 119 * delta
 			dirt_particle(wheel)
 	
 	
@@ -98,7 +101,7 @@ func dirt_particle(wheel : VehicleWheel3D):
 	if wheel.get_skidinfo() < .95:
 		# If not skidding, but for example driving on dirt, the lifetime should not be multiplied by 0
 		particle.lifetime = particle.lifetime * (1 - wheel.get_skidinfo())
-		particle.amount = round(particle.amount * (1 - wheel.get_skidinfo()))
+		particle.amount = clamp(round(particle.amount * (1 - wheel.get_skidinfo())), 1, particle.amount)
 	wheel.add_child(particle)
 
 @onready var engine_volume = $VehicleBody3D/engine.volume_db
