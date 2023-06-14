@@ -13,10 +13,11 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(str(name).to_int())
 
 func _ready() -> void:
+	$CanvasLayer.hide()
 	Info.game_started.connect(start)
-	print("Ready! " , multiplayer.get_unique_id())
 
 func start() -> void:
+	$CanvasLayer.show()
 	$VehicleBody3D/engine.playing = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -41,6 +42,35 @@ func start() -> void:
 var speed := 0.0
 func _physics_process(delta: float) -> void:
 	
+	
+	
+	
+	if is_multiplayer_authority():
+		
+		if Input.is_action_pressed("forward"):
+			set_brake_force(0)
+			set_engine_force(-ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) + 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
+		elif Input.is_action_pressed("back"):
+			if speed > 0:
+				#bromsa
+				set_brake_force(7)
+			else:
+				#backa
+				set_brake_force(0)
+				set_engine_force(ENGINE_POWER * .4 * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) + 1))
+		else:
+			set_engine_force(0)
+		engine_sound(abs(speed))
+		
+		if Input.is_action_pressed("left"):
+			Vehicle.steering = clamp(Vehicle.steering + STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
+		elif Input.is_action_pressed("right"):
+			Vehicle.steering = clamp(Vehicle.steering - STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
+		else:
+			Vehicle.steering *= 1.9 * STEERING_SENSITIVITY
+	
+	
+	
 	for wheel in [$"VehicleBody3D/FL wheel", $"VehicleBody3D/FR wheel", $"VehicleBody3D/BL wheel", $"VehicleBody3D/BR wheel"]:
 		# Drifting particles
 		if wheel.get_skidinfo() < 1: # skidding
@@ -49,38 +79,8 @@ func _physics_process(delta: float) -> void:
 		# Brake on ground
 		if wheel.get_contact_body() != null and wheel.get_contact_body().is_in_group("Ground"):
 			wheel.brake = 5 * wheel.get_skidinfo()
-			Vehicle.engine_force *= .1 # TODO doesnt work
+			Vehicle.engine_force *= .99
 			dirt_particle(wheel)
-	
-	
-	
-	if not is_multiplayer_authority(): return
-	
-	
-	
-	if Input.is_action_pressed("forward"):
-		set_brake_force(0)
-		set_engine_force(-ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
-	elif Input.is_action_pressed("back"):
-		if speed > 0:
-			#bromsa
-			set_brake_force(7)
-		else:
-			#backa
-			set_brake_force(0)
-			set_engine_force(ENGINE_POWER*.5 * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) / 1))
-	else:
-		set_engine_force(0)
-	engine_sound(speed)
-	
-	if Input.is_action_pressed("left"):
-		Vehicle.steering = clamp(Vehicle.steering + STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
-	elif Input.is_action_pressed("right"):
-		Vehicle.steering = clamp(Vehicle.steering - STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
-	else:
-		Vehicle.steering *= 1.9 * STEERING_SENSITIVITY
-	
-	
 	
 	
 	# place camera at car:
@@ -93,11 +93,12 @@ func _physics_process(delta: float) -> void:
 
 
 func dirt_particle(wheel : VehicleWheel3D):
-	if speed < 1: return
+	if abs(speed) < 1: return
 	var particle = preload("res://Drift particles.tscn").instantiate()
 	if wheel.get_skidinfo() < .95:
 		# If not skidding, but for example driving on dirt, the lifetime should not be multiplied by 0
 		particle.lifetime = particle.lifetime * (1 - wheel.get_skidinfo())
+		particle.amount = round(particle.amount * (1 - wheel.get_skidinfo()))
 	wheel.add_child(particle)
 
 @onready var engine_volume = $VehicleBody3D/engine.volume_db
@@ -123,13 +124,16 @@ func get_velocity(object = $VehicleBody3D) -> Vector3:
 
 func set_engine_force(force:float) -> void:
 	engine_sound(force)
-	for wheel in Vehicle.get_children():
-		if not wheel is VehicleWheel3D: continue
-		wheel.engine_force = force
+	$VehicleBody3D.engine_force = force
+#	for wheel in Vehicle.get_children():
+#		if not wheel is VehicleWheel3D: continue
+#		wheel.engine_force = force
 func set_brake_force(force:float) -> void:
 	for wheel in Vehicle.get_children():
 		if not wheel is VehicleWheel3D: continue
 		wheel.brake = force
+
+
 
 func _input(event: InputEvent) -> void:
 	if not is_multiplayer_authority(): return

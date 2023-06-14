@@ -4,9 +4,6 @@ extends Node3D
 var placement = {}
 
 func get_start_position(peer_id):
-	print(peer_id, "  ", placement)
-	
-	print(peer_id)
 	# if player is already connected:
 	if placement.has(peer_id):
 		return [placement[peer_id].global_rotation, placement[peer_id].global_position]

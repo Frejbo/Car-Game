@@ -39,7 +39,7 @@ func add_previous_global_info(global_info:Dictionary, start_placement:Dictionary
 	Info.global_info["players"].merge(global_info["players"])
 	Info.global_info["seed"] = global_info["seed"]
 	Info.global_info_changed.emit()
-	place_car(multiplayer.get_unique_id())
+#	place_car(multiplayer.get_unique_id())
 	
 	get_node("menu/world/map/startPositions").placement.merge(start_placement)
 
@@ -52,9 +52,9 @@ func joinGame(IPtext : String) -> void:
 	
 	multiplayer.connected_to_server.connect(connected)
 
-func connected(peer_id):
+func connected():
 	add_display_name.rpc(Info.PlayerName)
-	place_car(peer_id)
+#	place_car(peer_id)
 
 
 func add_player(peer_id):
@@ -72,22 +72,22 @@ func add_player(peer_id):
 	
 	$menu/world/Players.add_child(player)
 	
-	place_car(peer_id)
+#	place_car(peer_id)
 
-func place_car(peer_id):
-	# doesnt work on client side?
-	
-	var startPositions = get_node("menu/world/map/startPositions")
-	var new_transform = await startPositions.get_start_position(peer_id)
-	var player = get_node("menu/world/Players/").get_node(str(peer_id))
-	
-	print(new_transform)
-	if new_transform == null:
-		OS.alert("Server is full or already running.")
-		get_tree().quit()
-	await get_tree().create_timer(1).timeout
-	player.global_rotation = new_transform[0]
-	player.position = new_transform[1]
+#func place_car(peer_id):
+#	# doesnt work on client side?
+#
+#	var startPositions = get_node("menu/world/map/startPositions")
+#	var new_transform = await startPositions.get_start_position(peer_id)
+#	var player = get_node("menu/world/Players/").get_node(str(peer_id))
+#
+#	print(new_transform)
+#	if new_transform == null:
+#		OS.alert("Server is full or already running.")
+#		get_tree().quit()
+#	await get_tree().create_timer(1).timeout
+#	player.global_rotation = new_transform[0]
+#	player.position = new_transform[1]
 
 func remove_player(peer_id):
 	remove_display_name.rpc(peer_id)

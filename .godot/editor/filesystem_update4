@@ -1,15 +1,11 @@
-res://car.tscn
-res://Theme.tres
 res://world.tscn
+res://Theme.tres
 res://main.tscn
 res://maps/1.tscn
 res://Lobby.tscn
 res://menu.tscn
 res://PlayerMenuCard.tscn
+res://car.tscn
+res://Players.gd
 res://car.gd
-res://info.gd
-res://menu.gd
-res://multiplayer.gd
-res://Lobby.gd
-res://maps/startPositions.gd
-res://Drift particles.gd
+res://Drift particles.tscn

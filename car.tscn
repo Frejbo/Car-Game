@@ -318,7 +318,6 @@ center_of_mass = Vector3(0, 0.1, 0)
 
 [node name="engine" type="AudioStreamPlayer3D" parent="VehicleBody3D"]
 stream = ExtResource("2_mdhdl")
-volume_db = -10.0
 unit_size = 1.0
 doppler_tracking = 2
 
