@@ -6,9 +6,9 @@ var peer = ENetMultiplayerPeer.new()
 const Player = preload("res://Bilar/Sedan/sedan.tscn")
 
 @rpc("any_peer", "reliable", "call_local")
-func add_player_data(namn, carPath) -> void:
+func add_display_name(namn) -> void:
 	var id = multiplayer.get_remote_sender_id()
-	Info.global_info["players"][id] = {"display_name": namn, "carPath":carPath}
+	Info.global_info["players"][id] = {"display_name": namn}
 	Info.global_info_changed.emit()
 
 @rpc("reliable", "call_local")
@@ -27,7 +27,7 @@ func hostGame() -> void:
 	multiplayer.peer_disconnected.connect(remove_player)
 	
 	add_player(multiplayer.get_unique_id())
-	add_player_data.rpc(Info.PlayerName, Info.my_cars_scene_path)
+	add_display_name.rpc(Info.PlayerName)
 	
 	multiplayer.peer_connected.connect(send_previous_global_info)
 
@@ -36,7 +36,8 @@ func send_previous_global_info(new_peer_id):
 
 @rpc("reliable")
 func add_previous_global_info(global_info:Dictionary):
-	Info.global_info.merge(global_info)
+	Info.global_info["players"].merge(global_info["players"])
+	Info.global_info["seed"] = global_info["seed"]
 	Info.global_info_changed.emit()
 
 func joinGame(IPtext : String) -> void:
@@ -49,28 +50,16 @@ func joinGame(IPtext : String) -> void:
 	multiplayer.connected_to_server.connect(connected)
 
 func connected():
-	add_player_data.rpc(Info.PlayerName, Info.my_cars_scene_path)
+	add_display_name.rpc(Info.PlayerName)
 #	place_car(peer_id)
 
 
 func add_player(peer_id):
-	var player
-#	if multiplayer.get_unique_id() == 1:
-	print(Info.global_info)
-	player = load(Info.global_info["players"]["carPath"]).instantiate()
+	var player = Player.instantiate()
+	
 	player.name = str(peer_id)
-	$menu/world/Players.add_child(player, true)
-#	return
-	# get peer_ids selected player
-#	print("Frågar klienten om vilken bil")
-#	Info.get_car_path.rpc_id(peer_id)
-#@rpc("reliable", "any_peer")
-#func add_remote_players_car(carPath:String): # called from rpc response from above
-#	print(carPath)
-#	var player = load(carPath).instantiate()
-#	player.name = str(multiplayer.get_remote_sender_id())
-#	$menu/world/Players.add_child(player, true)
-
+	
+	$menu/world/Players.add_child(player)
 
 func remove_player(peer_id):
 	remove_display_name.rpc(peer_id)
