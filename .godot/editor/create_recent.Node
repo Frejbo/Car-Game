@@ -1,4 +1,8 @@
+MeshInstance3D
 MultiplayerSynchronizer
+Node3D
+OptionButton
+MenuButton
 VehicleWheel3D
 Label
 Camera3D
@@ -16,9 +20,7 @@ LineEdit
 CanvasLayer
 CollisionShape3D
 Area3D
-Node3D
 Marker3D
-MeshInstance3D
 VoxelGI
 MultiMeshInstance3D
 GridMap

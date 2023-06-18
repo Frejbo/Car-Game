@@ -3,7 +3,7 @@ extends Node
 const PORT = 3270
 var peer = ENetMultiplayerPeer.new()
 
-const Player = preload("res://Bilar/Sedan/sedan.tscn")
+const Player = preload("res://player.tscn")
 
 @rpc("any_peer", "reliable", "call_local")
 func add_display_name(namn) -> void:
@@ -37,7 +37,6 @@ func send_previous_global_info(new_peer_id):
 @rpc("reliable")
 func add_previous_global_info(global_info:Dictionary):
 	Info.global_info["players"].merge(global_info["players"])
-	Info.global_info["seed"] = global_info["seed"]
 	Info.global_info_changed.emit()
 
 func joinGame(IPtext : String) -> void:

@@ -36,4 +36,4 @@ func start():
 	$Lobby.queue_free()
 
 func _process(_delta: float) -> void:
-	$Label.text = str(Info.global_info["seed"])
+	$Label.text = str(multiplayer.get_unique_id())

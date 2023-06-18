@@ -1,34 +1,35 @@
-[gd_scene load_steps=19 format=3 uid="uid://roicenvbek7i"]
+[gd_scene load_steps=16 format=3 uid="uid://roicenvbek7i"]
 
-[ext_resource type="Script" path="res://car.gd" id="1_gulc6"]
 [ext_resource type="AudioStream" uid="uid://b34msm4sac68q" path="res://engine.ogg" id="2_3t1ta"]
-[ext_resource type="FontFile" uid="uid://be4xcsjidytqk" path="res://Anton-Regular.ttf" id="3_nggii"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bbnuc"]
-properties/0/path = NodePath("VehicleBody3D:brake")
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6q3tv"]
+properties/0/path = NodePath(".:engine_force")
 properties/0/spawn = true
 properties/0/sync = true
-properties/1/path = NodePath("VehicleBody3D:engine_force")
+properties/1/path = NodePath(".:brake")
 properties/1/spawn = true
 properties/1/sync = true
-properties/2/path = NodePath("VehicleBody3D:steering")
+properties/2/path = NodePath(".:steering")
 properties/2/spawn = true
 properties/2/sync = true
-properties/3/path = NodePath("VehicleBody3D:position")
+properties/3/path = NodePath(".:position")
 properties/3/spawn = true
 properties/3/sync = true
-properties/4/path = NodePath("VehicleBody3D:rotation")
+properties/4/path = NodePath(".:rotation")
 properties/4/spawn = true
 properties/4/sync = true
-properties/5/path = NodePath("VehicleBody3D/PlayerName:text")
+properties/5/path = NodePath("engine:pitch_scale")
 properties/5/spawn = true
 properties/5/sync = true
-properties/6/path = NodePath("VehicleBody3D/engine:volume_db")
+properties/6/path = NodePath("engine:volume_db")
 properties/6/spawn = true
 properties/6/sync = true
-properties/7/path = NodePath("VehicleBody3D/engine:pitch_scale")
+properties/7/path = NodePath("PlayerName:text")
 properties/7/spawn = true
 properties/7/sync = true
+properties/8/path = NodePath(".:visible")
+properties/8/spawn = true
+properties/8/sync = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phmgj"]
 resource_name = "carTire"
@@ -320,35 +321,21 @@ shadow_mesh = SubResource("ArrayMesh_lrpve")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ywi07"]
 points = PackedVector3Array(-0.769444, 0.486267, -0.286111, 0.786084, 0.602622, -0.286111, 0.786084, 0.486157, -0.286111, -0.574851, 0.525126, 1.26944, 0.608607, 0.000478412, 1.22571, -0.629866, 1.11022e-16, -1.1389, 0.453497, 1.08252, 0.544111, -0.41403, 1.05493, -0.186068, 0.608607, 0.000478367, -1.17571, -0.629866, 0, 1.1889, 0.552664, 0.525126, -1.18046, -0.574851, 0.525126, -1.18046, 0.552664, 0.525126, 1.26944, -0.444666, 1.09195, 0.553217, 0.430668, 1.05492, -0.186067, -0.769444, 0.602732, -0.286111, 0.669298, 0.213927, 1.23046, -0.613831, 0.213927, -1.21944, -0.613831, 0.213927, 1.26944, 0.630471, 0.213927, -1.21944, 0.639315, 0.00623976, 1.17578, 0.669298, 0.486157, 0.841393, 0.639315, 0.00623972, -1.12578, -0.652658, 0.213927, 1.23046, -0.463165, 1.03417, -0.19252, -0.652658, 0.213927, -1.18046, 0.669298, 0.213927, -1.18046, 0.630471, 0.213927, 1.26944, -0.592377, -1.11022e-16, 1.22653, -0.592377, 0, -1.17653, -0.769444, 0.486267, -0.441545, 0.786084, 0.486157, -0.441545)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_276k5"]
-bg_color = Color(0, 0, 0, 0.478431)
-corner_radius_top_left = 40
-expand_margin_left = 20.0
-expand_margin_top = 10.0
-
-[node name="Player" type="Node3D"]
-process_mode = 4
-script = ExtResource("1_gulc6")
-STEERING_RATE = 0.4
-STEERING_SENSITIVITY = 0.5
-ENGINE_POWER = 300.0
-ENGINE_SPEED = 20.0
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_bbnuc")
-
-[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
-collision_mask = 3
+[node name="Sedan" type="VehicleBody3D"]
 mass = 350.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
 
-[node name="engine" type="AudioStreamPlayer3D" parent="VehicleBody3D"]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_6q3tv")
+
+[node name="engine" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_3t1ta")
 unit_size = 1.0
+autoplay = true
 doppler_tracking = 2
 
-[node name="FL wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
+[node name="FL wheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, -0.66)
 use_as_steering = true
 wheel_radius = 0.3
@@ -357,12 +344,12 @@ suspension_travel = 0.15
 suspension_stiffness = 60.0
 suspension_max_force = 4000.0
 
-[node name="wheel_frontLeft" type="MeshInstance3D" parent="VehicleBody3D/FL wheel"]
+[node name="wheel_frontLeft" type="MeshInstance3D" parent="FL wheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
 mesh = SubResource("ArrayMesh_eudx1")
 skeleton = NodePath("")
 
-[node name="FR wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
+[node name="FR wheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, -0.66)
 use_as_steering = true
 wheel_radius = 0.3
@@ -371,12 +358,12 @@ suspension_travel = 0.15
 suspension_stiffness = 60.0
 suspension_max_force = 4000.0
 
-[node name="wheel_frontRight" type="MeshInstance3D" parent="VehicleBody3D/FR wheel"]
+[node name="wheel_frontRight" type="MeshInstance3D" parent="FR wheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
 mesh = SubResource("ArrayMesh_eudx1")
 skeleton = NodePath("")
 
-[node name="BL wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
+[node name="BL wheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.66)
 use_as_traction = true
 wheel_radius = 0.3
@@ -385,12 +372,12 @@ suspension_travel = 0.15
 suspension_stiffness = 60.0
 suspension_max_force = 4000.0
 
-[node name="wheel_backLeft" type="MeshInstance3D" parent="VehicleBody3D/BL wheel"]
+[node name="wheel_backLeft" type="MeshInstance3D" parent="BL wheel"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
 mesh = SubResource("ArrayMesh_eudx1")
 skeleton = NodePath("")
 
-[node name="BR wheel" type="VehicleWheel3D" parent="VehicleBody3D"]
+[node name="BR wheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0.66)
 use_as_traction = true
 wheel_radius = 0.3
@@ -399,12 +386,12 @@ suspension_travel = 0.15
 suspension_stiffness = 60.0
 suspension_max_force = 4000.0
 
-[node name="wheel_backRight" type="MeshInstance3D" parent="VehicleBody3D/BR wheel"]
+[node name="wheel_backRight" type="MeshInstance3D" parent="BR wheel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
 mesh = SubResource("ArrayMesh_eudx1")
 skeleton = NodePath("")
 
-[node name="PlayerName" type="Label3D" parent="VehicleBody3D"]
+[node name="PlayerName" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74497, 0)
 billboard = 1
 outline_modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
@@ -412,42 +399,11 @@ text = "Name of player"
 autowrap_mode = 2
 width = 300.0
 
-[node name="body" type="MeshInstance3D" parent="VehicleBody3D"]
+[node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 mesh = SubResource("ArrayMesh_v8jr3")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("ConvexPolygonShape3D_ywi07")
-
-[node name="camera_rotation_x" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, 0)
-
-[node name="camera_rotation_y" type="Node3D" parent="camera_rotation_x"]
-
-[node name="Camera3D" type="Camera3D" parent="camera_rotation_x/camera_rotation_y"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, -1.74846e-07)
-fov = 60.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="speed" type="Label" parent="CanvasLayer"]
-custom_minimum_size = Vector2(175, 0)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -137.0
-offset_top = -76.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("3_nggii")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_276k5")
-text = "0 Km/h"
-horizontal_alignment = 1
-vertical_alignment = 1

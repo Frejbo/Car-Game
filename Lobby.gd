@@ -6,9 +6,9 @@ func _ready() -> void:
 	Info.global_info_changed.connect(update_cards)
 	update_cards()
 	
-	if is_multiplayer_authority():
-		$start.show()
-		$wait_for_host.hide()
+	if not is_multiplayer_authority():
+		$start.hide()
+		$wait_for_host.show()
 
 
 func update_cards():

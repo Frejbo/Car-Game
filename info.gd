@@ -4,4 +4,13 @@ signal global_info_changed
 signal game_started
 
 var PlayerName := "Unknown player"
-var global_info = {"seed":randi(), "players":{}}
+enum cars {SUV, Sedan}
+const car_icons := {
+	cars.SUV:"res://Bilar/SUV/suv.png",
+	cars.Sedan:"res://Bilar/Sedan/sedan.png"
+}
+#const car_paths = {
+#	cars.SUV:"res://Bilar/SUV/suv.tscn",
+#	cars.Sedan:"res://Bilar/Sedan/sedan.tscn"
+#}
+var global_info = {"players":{}}
