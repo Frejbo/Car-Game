@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://oacb5fduk8fd"]
+[gd_scene load_steps=5 format=3 uid="uid://oacb5fduk8fd"]
 
 [ext_resource type="Texture2D" uid="uid://e0ydgtymt550" path="res://Bilar/SUV/suv.png" id="1_1u5q4"]
+[ext_resource type="Script" path="res://PlayerMenuCard.gd" id="1_mltqr"]
 [ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="2_fklwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4h83"]
@@ -17,6 +18,7 @@ custom_minimum_size = Vector2(400, 100)
 offset_right = 884.0
 offset_bottom = 100.0
 alignment_horizontal = 0
+script = ExtResource("1_mltqr")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(400, 100)

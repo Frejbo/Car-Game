@@ -1,5 +1,6 @@
-MeshInstance3D
+Timer
 MultiplayerSynchronizer
+MeshInstance3D
 Node3D
 OptionButton
 MenuButton
@@ -29,4 +30,3 @@ AudioStreamPlayer3D
 GPUParticles3D
 DirectionalLight3D
 WorldEnvironment
-VehicleBody3D

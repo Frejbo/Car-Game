@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _on_item_selected(index: int) -> void:
 	if not is_multiplayer_authority():
-		print("hsakdjaks")
 		return
 	
 	if Info.cars.size() <= index:

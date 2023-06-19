@@ -15,6 +15,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	Info.game_started.connect(start)
+	$CanvasLayer/speed.hide()
 	if not is_multiplayer_authority():
 		$CanvasLayer.hide()
 
@@ -26,17 +27,13 @@ func start() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if is_multiplayer_authority():
 		$camera_rotation_x/camera_rotation_y/Camera3D.current = true
+	# sometimes the game freezes when the user tries to drive forward without turning the wheel first. This is probably a bug with godot. To fix this I set the steering to a small amount when the car enters the scene. This amount steering should immidiatly disappear.
+	Vehicle.steering = .0001
 
 
 func set_car(car : Info.cars):
-#	if Vehicle != null:
-#		Vehicle.queue_free()
-#	Vehicle = load( Info.car_paths[car] ).instantiate()
-#	add_child(Vehicle)
 	Vehicle = $Vehicles.set_car(car)
 	
-	# sometimes the game freezes when the user tries to drive forward without turning the wheel first. This is probably a bug with godot. To fix this I set the steering to a small amount when the car enters the scene. This amount steering should immidiatly disappear.
-	Vehicle.steering = .0001
 
 
 
@@ -72,7 +69,7 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_pressed("right"):
 			Vehicle.steering = clamp(Vehicle.steering - STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
 		else:
-			Vehicle.steering *= 225 * STEERING_SENSITIVITY * delta
+			Vehicle.steering *= 300 * STEERING_SENSITIVITY * delta
 	
 	
 	

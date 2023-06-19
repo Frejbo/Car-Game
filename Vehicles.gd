@@ -1,18 +1,34 @@
 extends Node3D
 
-var car : Info.cars
 var prev_car_pos : Vector3
+#signal car_changed
+var car : Info.cars
 
 func _ready() -> void:
 	# set player name
-	if not is_multiplayer_authority(): return
+	
 	for Vehicle in get_children():
+		Vehicle.visibility_changed.connect(update_car_variable)
+		
+		if not is_multiplayer_authority(): continue
 		Vehicle.get_node("PlayerName").text = Info.PlayerName
 		Vehicle.get_node("PlayerName").hide()
+	
+#	call_deferred(car_changed.connect(get_node("/root/main/menu/Lobby").update_card_info))
+
+@warning_ignore("int_as_enum_without_cast")
+func update_car_variable():
+	var index := -1
+	for Vehicle in get_children():
+		index+=1
+		if not Vehicle.visible: continue
+		
+		car = index
+
+
 
 func set_car(new_car : Info.cars):
 	var vehicle : VehicleBody3D
-	print(vehicle)
 	car = new_car
 	for node in get_children():
 		if node.visible:

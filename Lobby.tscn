@@ -23,6 +23,9 @@ offset_right = 70.0
 offset_bottom = 20.0
 grow_vertical = 2
 
+[node name="update cards" type="Timer" parent="."]
+autostart = true
+
 [node name="wait_for_host" type="Label" parent="."]
 visible = false
 layout_mode = 1
@@ -54,4 +57,5 @@ theme = ExtResource("2_kwkjj")
 theme_override_font_sizes/font_size = 64
 text = "START"
 
+[connection signal="timeout" from="update cards" to="." method="update_cards"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

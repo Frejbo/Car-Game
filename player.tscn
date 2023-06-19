@@ -70,6 +70,8 @@ popup/item_1/id = 1
 script = ExtResource("5_b2ojj")
 
 [node name="Vehicles" type="Node3D" parent="."]
+editor_description = "The children of this node is required to follow the same order as Info.cars enum. (SUV = 0, Sedan = 1...)
+update_car_variable() won't work otherwise, and the remote lobby cards will not have the correct icon for players other than themselves."
 script = ExtResource("6_qu3yq")
 
 [node name="SUV" parent="Vehicles" instance=ExtResource("7_ifmbk")]
