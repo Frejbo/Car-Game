@@ -33,8 +33,6 @@ func start() -> void:
 
 func set_car(car : Info.cars):
 	Vehicle = $Vehicles.set_car(car)
-	
-
 
 
 var speed := 0.0

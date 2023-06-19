@@ -1,7 +1,6 @@
 extends Node3D
 
 var prev_car_pos : Vector3
-#signal car_changed
 var car : Info.cars
 
 func _ready() -> void:
@@ -13,8 +12,6 @@ func _ready() -> void:
 		if not is_multiplayer_authority(): continue
 		Vehicle.get_node("PlayerName").text = Info.PlayerName
 		Vehicle.get_node("PlayerName").hide()
-	
-#	call_deferred(car_changed.connect(get_node("/root/main/menu/Lobby").update_card_info))
 
 @warning_ignore("int_as_enum_without_cast")
 func update_car_variable():
@@ -52,7 +49,7 @@ func set_car(new_car : Info.cars):
 	if prev_car_pos != null:
 		vehicle.position = prev_car_pos
 	
-	# sometimes the game freezes when the user tries to drive forward without turning the wheel first. This is probably a bug with godot. To fix this I set the steering to a small amount when the car enters the scene. This amount steering should immidiatly disappear.
-	vehicle.steering = .0001
+#	# sometimes the game freezes when the user tries to drive forward without turning the wheel first. This is probably a bug with godot. To fix this I set the steering to a small amount when the car enters the scene. This amount steering should immidiatly disappear.
+#	vehicle.steering = .0001
 	
 	return vehicle

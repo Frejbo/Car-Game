@@ -4,6 +4,7 @@ var MenuCard = preload("res://PlayerMenuCard.tscn")
 var playerCards = {}
 
 func _ready() -> void:
+	update_cards()
 	if not is_multiplayer_authority():
 		$start.hide()
 		$wait_for_host.show()

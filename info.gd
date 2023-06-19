@@ -3,6 +3,8 @@ extends Node
 signal global_info_changed
 signal game_started
 
+const CONFIG_VERSION := 0
+
 var PlayerName := "Unknown player"
 enum cars {SUV, Sedan}
 const car_icons := {

@@ -3,7 +3,9 @@ extends OptionButton
 @onready var car:int = selected
 
 func _ready() -> void:
-	pass
+	var config = ConfigFile.new()
+	config.load("user://config.cfg")
+	selected = config.get_value("last_used", "car", 0)
 
 func _on_item_selected(index: int) -> void:
 	if not is_multiplayer_authority():

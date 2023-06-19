@@ -11,3 +11,6 @@ res://Lobby.gd
 res://Bilar/Suv/suv.tscn
 res://Vehicles.gd
 res://player.gd
+res://menu.gd
+res://info.gd
+res://carSelector.gd

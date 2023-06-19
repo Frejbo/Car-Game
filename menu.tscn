@@ -29,7 +29,6 @@ alignment = 1
 
 [node name="name" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
-text = "Frej"
 placeholder_text = "Name"
 caret_blink = true
 caret_blink_interval = 0.5
@@ -49,7 +48,6 @@ alignment = 1
 [node name="IP" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
-text = "localhost"
 placeholder_text = "IP of host"
 alignment = 1
 max_length = 15
