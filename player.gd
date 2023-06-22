@@ -1,9 +1,9 @@
 extends Node3D
 
-@export var STEERING_RATE : float = .35
-@export var STEERING_SENSITIVITY : float = .35
-@export var ENGINE_POWER : float = 400
-@export var ENGINE_SPEED : float = 30
+#@export var STEERING_RATE : float = .35
+#@export var STEERING_SENSITIVITY : float = .35
+#@export var ENGINE_POWER : float = 400
+#@export var ENGINE_SPEED : float = 30
 const MOUSE_SENSITIVITY := .4
 const ZOOM_SENSITIVITY := .2
 
@@ -45,29 +45,29 @@ func _physics_process(delta: float) -> void:
 		# calculate speed and show on UI
 		speed = -get_velocity().z * 3.6
 		$CanvasLayer/speed.text = str(abs(round(speed))) + " Km/h"
-		
-		
-		if Input.is_action_pressed("forward"):
+		print(Input.get_axis("back", "forward") * -Vehicle.ENGINE_POWER * ((Vehicle.ENGINE_POWER / abs(get_velocity().z * 3.6)) + 1))
+		if Input.get_axis("back", "forward") > 0:
 			set_brake_force(0)
-			set_engine_force(-ENGINE_POWER * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) + 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
-		elif Input.is_action_pressed("back"):
+			set_engine_force(Input.get_axis("back", "forward") * -Vehicle.ENGINE_POWER * ((Vehicle.ENGINE_POWER / abs(get_velocity().z * 3.6)) + 1)) # Formler för att bilen ska gasa mindre ju snabbare man kör
+		elif Input.get_axis("back", "forward") < 0:
 			if speed > 0:
 				#bromsa
-				set_brake_force(7)
+				set_brake_force(Input.get_axis("back", "forward") * Vehicle.BRAKE_FORCE)
 			else:
 				#backa
 				set_brake_force(0)
-				set_engine_force(ENGINE_POWER * .4 * ((ENGINE_SPEED / abs(get_velocity().z * 3.6)) + 1))
+				set_engine_force(abs(Input.get_axis("forward", "back")) * Vehicle.ENGINE_POWER * .4 * ((Vehicle.ENGINE_POWER / abs(get_velocity().z * 3.6)) + 1))
 		else:
 			set_engine_force(0)
 		engine_sound(abs(speed))
 		
-		if Input.is_action_pressed("left"):
-			Vehicle.steering = clamp(Vehicle.steering + STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
-		elif Input.is_action_pressed("right"):
-			Vehicle.steering = clamp(Vehicle.steering - STEERING_SENSITIVITY * delta, -STEERING_RATE, STEERING_RATE)
+#		print(Input.get_axis("left", "right"))
+		if Input.get_axis("left", "right") < 0:
+			Vehicle.steering = clamp(abs(Input.get_axis("left", "right")) * Vehicle.steering + Vehicle.STEERING_SENSITIVITY * delta, -Vehicle.STEERING_RATE, Vehicle.STEERING_RATE)
+		elif Input.get_axis("left", "right") > 0:
+			Vehicle.steering = clamp(abs(Input.get_axis("left", "right")) * Vehicle.steering - Vehicle.STEERING_SENSITIVITY * delta, -Vehicle.STEERING_RATE, Vehicle.STEERING_RATE)
 		else:
-			Vehicle.steering *= 300 * STEERING_SENSITIVITY * delta
+			Vehicle.steering *= 300 * Vehicle.STEERING_SENSITIVITY * delta
 	
 	
 	
@@ -101,7 +101,7 @@ func dirt_particle(wheel : VehicleWheel3D):
 		particle.amount = clamp(round(particle.amount * (1 - wheel.get_skidinfo())), 1, particle.amount)
 	wheel.add_child(particle)
 
-@onready var engine_volume = 0#$VehicleBody3D/engine.volume_db
+@onready var engine_volume = -10
 func engine_sound(acceleration):
 	Vehicle.get_node("engine").pitch_scale = clamp(acceleration / 30, .4, 2.7)
 	Vehicle.get_node("engine").volume_db = engine_volume + clamp(acceleration / 2, 0, 20)

@@ -1,21 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://b37fefq04q7n4"]
+[gd_scene load_steps=12 format=3 uid="uid://b37fefq04q7n4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fwxin"]
 [ext_resource type="FontFile" uid="uid://be4xcsjidytqk" path="res://Anton-Regular.ttf" id="2_gsg4h"]
-[ext_resource type="Texture2D" uid="uid://e0ydgtymt550" path="res://Bilar/SUV/suv.png" id="3_ev10f"]
+[ext_resource type="Texture2D" uid="uid://dndwowxoxd7r5" path="res://Bilar/SUV/suv.png" id="3_ev10f"]
 [ext_resource type="Texture2D" uid="uid://cmnxq8f4vrpod" path="res://Bilar/Sedan/sedan.png" id="4_0ws74"]
 [ext_resource type="Script" path="res://carSelector.gd" id="5_b2ojj"]
+[ext_resource type="Texture2D" uid="uid://bof7hnopsnxuh" path="res://Bilar/Van/van.png" id="5_jxcf0"]
 [ext_resource type="Script" path="res://Vehicles.gd" id="6_qu3yq"]
 [ext_resource type="PackedScene" uid="uid://snurk671r3e7" path="res://Bilar/SUV/suv.tscn" id="7_ifmbk"]
 [ext_resource type="PackedScene" uid="uid://roicenvbek7i" path="res://Bilar/Sedan/sedan.tscn" id="8_etxki"]
+[ext_resource type="PackedScene" uid="uid://bt2bfiu7o1gni" path="res://Bilar/Van/Van.tscn" id="9_f7ymo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_276k5"]
 bg_color = Color(0, 0, 0, 0.478431)
 corner_radius_top_left = 40
 expand_margin_left = 20.0
 expand_margin_top = 10.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_qps3y"]
 
 [node name="Player" type="Node3D"]
 process_mode = 4
@@ -59,7 +59,7 @@ offset_left = 27.0
 offset_top = 20.0
 offset_right = 184.0
 offset_bottom = 92.0
-item_count = 2
+item_count = 3
 selected = 0
 popup/item_0/text = "SUV"
 popup/item_0/icon = ExtResource("3_ev10f")
@@ -67,6 +67,9 @@ popup/item_0/id = 0
 popup/item_1/text = "Sedan"
 popup/item_1/icon = ExtResource("4_0ws74")
 popup/item_1/id = 1
+popup/item_2/text = "Van"
+popup/item_2/icon = ExtResource("5_jxcf0")
+popup/item_2/id = 2
 script = ExtResource("5_b2ojj")
 
 [node name="Vehicles" type="Node3D" parent="."]
@@ -80,9 +83,7 @@ visible = false
 [node name="Sedan" parent="Vehicles" instance=ExtResource("8_etxki")]
 visible = false
 
-[node name="pointer temp" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="Van" parent="Vehicles" instance=ExtResource("9_f7ymo")]
 visible = false
-mesh = SubResource("BoxMesh_qps3y")
 
 [connection signal="item_selected" from="CanvasLayer/carSelector" to="CanvasLayer/carSelector" method="_on_item_selected"]

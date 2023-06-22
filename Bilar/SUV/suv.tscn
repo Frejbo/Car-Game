@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://snurk671r3e7"]
+[gd_scene load_steps=17 format=3 uid="uid://snurk671r3e7"]
 
+[ext_resource type="Script" path="res://Bilar/vehicle performance.gd" id="1_1meym"]
 [ext_resource type="AudioStream" uid="uid://b34msm4sac68q" path="res://engine.ogg" id="1_lfemj"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_usu77"]
@@ -305,6 +306,8 @@ shadow_mesh = SubResource("ArrayMesh_itvwg")
 mass = 500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
+script = ExtResource("1_1meym")
+ENGINE_POWER = 130.0
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_usu77")

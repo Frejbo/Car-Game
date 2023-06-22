@@ -1,13 +1,18 @@
 res://kenney_racing-kit/Models/OBJ format/Decorations.tscn::2e0587bdc8217cf1344ffa3770acd8ce::1686566721::res://.godot/exported/133200997/export-a7b29845c2fb643df1eb7073abdf22d2-Decorations.scn
 res://kenney_racing-kit/Models/OBJ format/Ground.tscn::b3631e4ba0a0b434495cb7436c3d4905::1686565845::res://.godot/exported/133200997/export-22cb6f058c10d6e44ccf17b8ae7b58ad-Ground.scn
-res://kenney_racing-kit/Models/OBJ format/Roads.tscn::f1a2dfb79dc195382c1a8e148797d9bd::1686566720::res://.godot/exported/133200997/export-8c1c8adccb4f8983d755979e6789c8bd-Roads.scn
+res://kenney_racing-kit/Models/OBJ format/Roads.tscn::3c9d922a7fa79f32683c2d22211c555d::1686777964::res://.godot/exported/133200997/export-8c1c8adccb4f8983d755979e6789c8bd-Roads.scn
 res://kenney_racing-kit/racing map.tscn::8d8f56dd090e835d614d1931616545f4::1686597472::res://.godot/exported/133200997/export-14e7087b71d5aafdb5c54c1936030511-racing map.scn
-res://maps/1.tscn::089ff257be8474a31cccb9b3da646c02::1686766518::res://.godot/exported/133200997/export-014d895b15fa2ad46b504906e2c53d15-1.scn
-res://car.tscn::ad870e4d3d15cc59fd9241a6e80db360::1686766837::res://.godot/exported/133200997/export-7a257c599a55bbda69bf2d6f391fee60-car.scn
-res://Drift particles.tscn::52e760e359a0f2d80efe65887488a7ab::1686597472::res://.godot/exported/133200997/export-bc9463c5bb70ad0409e1fb888a34a4d9-Drift particles.scn
-res://Lobby.tscn::589e0d4c6d347eaadf4e40f28f30859d::1686766519::res://.godot/exported/133200997/export-c369462c7f5947728e05f24a21b69647-Lobby.scn
-res://main.tscn::d387203be0faef791654a4d420d0e020::1686766518::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
-res://menu.tscn::02b3ae9d95e0a23ee13d1ccd1ed8df02::1686766519::res://.godot/exported/133200997/export-a4951207776b25ee5c8b2b05c1463587-menu.scn
-res://PlayerMenuCard.tscn::325119a01e30d6300367e1d250cf08bc::1686766519::res://.godot/exported/133200997/export-204dde466e377b2c1ae31fcca601d171-PlayerMenuCard.scn
-res://world.tscn::9998c5b90106c918f700a16712d9842f::1686766518::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
-res://Theme.tres::510a463a8a1cc4ed57bd62d362f24b1b::1686758464::res://.godot/exported/133200997/export-4df2cb670c391688f097c02f900b548e-Theme.res
+res://maps/1.tscn::8707e9ea306bfc8e17c54929c36c3a7d::1687206825::res://.godot/exported/133200997/export-014d895b15fa2ad46b504906e2c53d15-1.scn
+res://Drift particles.tscn::588904c85466124c9f5d342d71c25c90::1686771165::res://.godot/exported/133200997/export-bc9463c5bb70ad0409e1fb888a34a4d9-Drift particles.scn
+res://Lobby.tscn::9ebf296a7c03e9b8f6984628f94ce60f::1687206825::res://.godot/exported/133200997/export-c369462c7f5947728e05f24a21b69647-Lobby.scn
+res://main.tscn::d387203be0faef791654a4d420d0e020::1687206825::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://menu.tscn::be7afd91e50dc110af4d3e28cf43a3cb::1687206825::res://.godot/exported/133200997/export-a4951207776b25ee5c8b2b05c1463587-menu.scn
+res://PlayerMenuCard.tscn::ddfcb89277dbb323c03077cb332b6525::1687206825::res://.godot/exported/133200997/export-204dde466e377b2c1ae31fcca601d171-PlayerMenuCard.scn
+res://world.tscn::ddc03d0fddbc011b868c0fc32995f249::1687206825::res://.godot/exported/133200997/export-76e0adcbc83681695885bae615f516ae-world.scn
+res://Theme.tres::4449afd26195a1e52aa269ad837e58f9::1687203154::res://.godot/exported/133200997/export-4df2cb670c391688f097c02f900b548e-Theme.res
+res://Bilar/Sedan/sedan.tscn::5cc2516e92c86347314a94eba10cfda0::1687206825::res://.godot/exported/133200997/export-c19335dd2ae1419feebb474717ee0e01-sedan.scn
+res://Bilar/SUV/suv.tscn::3a7977641052719c396d22450e828aa7::1687206825::res://.godot/exported/133200997/export-8a51a680bb3fdfe1b0a955ea671f66e5-suv.scn
+res://Bilar/Suv/suv.tscn::3a7977641052719c396d22450e828aa7::1687206825::res://.godot/exported/133200997/export-cec6637e9f4b85c1c028caff3f3d2def-suv.scn
+res://Bilar/Van/Van.tscn::a241f00960e22a199bc07a7f271f55fd::1687207304::res://.godot/exported/133200997/export-50877180c27b71af1f3f2a8a207f08b1-Van.scn
+res://default_bus_layout.tres::88baee2739c13852d137e8bd229ecfa1::1687124716::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://player.tscn::e2ff789dc929ed296c2af2d7a3cefda0::1687206825::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn

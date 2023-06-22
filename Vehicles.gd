@@ -35,11 +35,12 @@ func set_car(new_car : Info.cars):
 		node.process_mode = Node.PROCESS_MODE_DISABLED
 		node.hide()
 	
-	match new_car:
-		Info.cars.SUV:
-			vehicle = $SUV
-		Info.cars.Sedan:
-			vehicle = $Sedan
+	vehicle = get_child(new_car)
+#		Info.cars.SUV:
+#			vehicle = $SUV
+#		Info.cars.Sedan:
+#			vehicle = $Sedan
+#		Info.ca
 	
 	vehicle.collision_layer = 1
 	vehicle.collision_mask = 1

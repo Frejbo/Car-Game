@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://roicenvbek7i"]
+[gd_scene load_steps=17 format=3 uid="uid://roicenvbek7i"]
 
+[ext_resource type="Script" path="res://Bilar/vehicle performance.gd" id="1_ffp2p"]
 [ext_resource type="AudioStream" uid="uid://b34msm4sac68q" path="res://engine.ogg" id="2_3t1ta"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6q3tv"]
@@ -325,6 +326,8 @@ points = PackedVector3Array(-0.769444, 0.486267, -0.286111, 0.786084, 0.602622, 
 mass = 350.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.1, 0)
+script = ExtResource("1_ffp2p")
+ENGINE_POWER = 120.0
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_6q3tv")
