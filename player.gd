@@ -85,6 +85,8 @@ func _physics_process(delta: float) -> void:
 	
 	# place camera at car:
 	$camera_rotation_x.position = Vehicle.position + Vector3(0, 1, 0)
+	# speed distancing
+	$camera_rotation_x/camera_rotation_y/Camera3D.position.x = 4 + speed/25
 	
 	# reset if car is outside world:
 	if Vehicle.position.y < -5:

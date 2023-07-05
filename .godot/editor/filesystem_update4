@@ -7,13 +7,6 @@ res://player.tscn
 res://Bilar/Sedan/sedan.tscn
 res://menu.tscn
 res://PlayerMenuCard.tscn
-res://Lobby.gd
-res://Bilar/Suv/suv.tscn
-res://Vehicles.gd
-res://player.gd
-res://menu.gd
-res://info.gd
-res://carSelector.gd
-res://Bilar/Van/vehicle performance.gd
-res://Bilar/vehicle performance.gd
 res://Bilar/Van/Van.tscn
+res://player.gd
+res://Bilar/Suv/suv.tscn
