@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://6rpvjaurmypu"
-path="res://.godot/imported/suv.glb-1f461b90ad691014b3794df9555b3343.scn"
+path="res://.godot/imported/suv.glb-fe029fe39a38d348c85277dc808e32a3.scn"
 
 [deps]
 
-source_file="res://Bilar/Suv/suv.glb"
-dest_files=["res://.godot/imported/suv.glb-1f461b90ad691014b3794df9555b3343.scn"]
+source_file="res://Bilar/SUV/suv.glb"
+dest_files=["res://.godot/imported/suv.glb-fe029fe39a38d348c85277dc808e32a3.scn"]
 
 [params]
 
