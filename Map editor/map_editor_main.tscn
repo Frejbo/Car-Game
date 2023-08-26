@@ -1,0 +1,250 @@
+[gd_scene load_steps=23 format=3 uid="uid://dfu5htavdqyl2"]
+
+[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="1_xeqqe"]
+[ext_resource type="Script" path="res://Map editor/map.gd" id="2_h1yk7"]
+[ext_resource type="Script" path="res://Map editor/camera.gd" id="2_t7us7"]
+[ext_resource type="MeshLibrary" uid="uid://k81j8x8rgf5e" path="res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib" id="2_yc0ho"]
+[ext_resource type="Script" path="res://Map editor/placement.gd" id="3_dcm38"]
+[ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="4_3myh7"]
+[ext_resource type="Script" path="res://Map editor/placementFloor.gd" id="4_lrlul"]
+[ext_resource type="Script" path="res://Map editor/GridMapBP.gd" id="5_qekkv"]
+[ext_resource type="Material" uid="uid://dqlack4l4pi7x" path="res://Map editor/gridMaterial.tres" id="6_y64r5"]
+[ext_resource type="Script" path="res://Map editor/ItemSelector.gd" id="8_ueagx"]
+[ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="10_5ojdn"]
+[ext_resource type="Script" path="res://Map editor/BuildSelector.gd" id="10_qm8bd"]
+[ext_resource type="Script" path="res://Map editor/ESC_menu.gd" id="13_51o1v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jxmxm"]
+material = ExtResource("6_y64r5")
+size = Vector3(50, 0.01, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tptdi"]
+size = Vector3(50, 0, 50)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy2l1"]
+bg_color = Color(0.952941, 0.952941, 0.952941, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axrkf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yo71"]
+bg_color = Color(0, 0, 0, 0.509804)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 0.509804)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqkd5"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.231373, 0, 0.392157)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbd7v"]
+material = SubResource("StandardMaterial3D_iqkd5")
+size = Vector3(5, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7632"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0.211765, 1, 0.392157)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q5pis"]
+material = SubResource("StandardMaterial3D_a7632")
+size = Vector3(0.05, 0.05, 5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("2_h1yk7")
+
+[node name="Ground" type="GridMap" parent="."]
+mesh_library = ExtResource("2_yc0ho")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="Road" type="GridMap" parent="."]
+mesh_library = ExtResource("1_xeqqe")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="Decoration" type="GridMap" parent="."]
+mesh_library = ExtResource("4_3myh7")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="GridMapBP" type="GridMap" parent="."]
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_qekkv")
+
+[node name="camera_rot_y" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Camera3D_rot_x" type="Camera3D" parent="camera_rot_y"]
+script = ExtResource("2_t7us7")
+
+[node name="RayCast3D" type="RayCast3D" parent="camera_rot_y/Camera3D_rot_x"]
+target_position = Vector3(0, 0, -20)
+collision_mask = 2
+script = ExtResource("3_dcm38")
+
+[node name="placementFloor" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_lrlul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="placementFloor"]
+mesh = SubResource("BoxMesh_jxmxm")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="placementFloor"]
+shape = SubResource("BoxShape3D_tptdi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="crosshair" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uy2l1")
+
+[node name="CurrentFloor" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_right = 194.0
+offset_bottom = 52.0
+theme = ExtResource("10_5ojdn")
+theme_override_font_sizes/font_size = 32
+text = "Floor height 0"
+
+[node name="ItemSelector" type="ItemList" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.5
+offset_top = -360.0
+offset_right = 630.5
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_5ojdn")
+max_columns = 10
+same_column_width = true
+fixed_column_width = 245
+icon_mode = 0
+script = ExtResource("8_ueagx")
+
+[node name="BuildSelector" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("10_5ojdn")
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("10_qm8bd")
+
+[node name="Ground" type="Button" parent="CanvasLayer/BuildSelector"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_axrkf")
+text = "Ground"
+
+[node name="Road" type="Button" parent="CanvasLayer/BuildSelector"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_axrkf")
+text = "Road"
+
+[node name="Decoration" type="Button" parent="CanvasLayer/BuildSelector"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_axrkf")
+text = "Decoration"
+
+[node name="ESC_menu" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_5ojdn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yo71")
+script = ExtResource("13_51o1v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ESC_menu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ESC_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Your progress is saved automatically."
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/ESC_menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit_level_editor" type="Button" parent="CanvasLayer/ESC_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit level editor"
+
+[node name="quit_game" type="Button" parent="CanvasLayer/ESC_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit game"
+
+[node name="Loading" type="Label" parent="CanvasLayer/ESC_menu/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Loading, please wait..."
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="x_axis" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mbd7v")
+
+[node name="z_axis" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_q5pis")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Autosave" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="item_selected" from="CanvasLayer/ItemSelector" to="CanvasLayer/ItemSelector" method="_on_item_selected"]
+[connection signal="pressed" from="CanvasLayer/BuildSelector/Ground" to="CanvasLayer/BuildSelector" method="_on_ground_pressed"]
+[connection signal="pressed" from="CanvasLayer/BuildSelector/Road" to="CanvasLayer/BuildSelector" method="_on_road_pressed"]
+[connection signal="pressed" from="CanvasLayer/BuildSelector/Decoration" to="CanvasLayer/BuildSelector" method="_on_decoration_pressed"]
+[connection signal="pressed" from="CanvasLayer/ESC_menu/VBoxContainer/exit_level_editor" to="CanvasLayer/ESC_menu" method="_on_exit_level_editor_pressed"]
+[connection signal="pressed" from="CanvasLayer/ESC_menu/VBoxContainer/quit_game" to="CanvasLayer/ESC_menu" method="_on_quit_game_pressed"]
+[connection signal="timeout" from="Autosave" to="." method="_on_autosave_timeout"]

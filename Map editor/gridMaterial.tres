@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqlack4l4pi7x"]
+
+[ext_resource type="Texture2D" uid="uid://dy3ssen5sdtfj" path="res://Map editor/ruta.png" id="1_rhtdf"]
+
+[resource]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.443137, 0.615686, 1, 0.117647)
+albedo_texture = ExtResource("1_rhtdf")
+uv1_triplanar = true
+texture_filter = 0
+distance_fade_mode = 1
+distance_fade_min_distance = 25.0
+distance_fade_max_distance = 3.0

@@ -1,5 +1,6 @@
 res://world.tscn
 res://Theme.tres
+res://menu.gd
 res://main.tscn
 res://maps/1.tscn
 res://Lobby.tscn
@@ -8,5 +9,15 @@ res://Bilar/Sedan/sedan.tscn
 res://menu.tscn
 res://PlayerMenuCard.tscn
 res://Bilar/Van/Van.tscn
-res://player.gd
+res://Map editor/map_editor_main.tscn
 res://Bilar/Suv/suv.tscn
+res://Map editor/level_editor_menu.tscn
+res://Map editor/level_editor_menu.gd
+res://Map editor/gridMaterial.tres
+res://Map editor/camera.gd
+res://Map editor/placementFloor.gd
+res://Map editor/ItemSelector.gd
+res://Map editor/placement.gd
+res://Map editor/BuildSelector.gd
+res://Map editor/maplist.gd
+res://Map editor/ESC_menu.gd

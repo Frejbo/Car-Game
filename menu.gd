@@ -85,3 +85,7 @@ func set_last_used_car():
 	config.load("user://config.cfg")
 	print(config.get_value("last_used", "car", 0))
 	$world/Players.get_node(str(multiplayer.get_unique_id())).set_car(config.get_value("last_used", "car", 0))
+
+
+func _on_map_editor_pressed() -> void:
+	get_tree().change_scene_to_file("res://Map editor/level_editor_menu.tscn")

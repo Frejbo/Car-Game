@@ -1,3 +1,8 @@
+Label
+HSeparator
+Button
+PanelContainer
+VBoxContainer
 Timer
 MultiplayerSynchronizer
 MeshInstance3D
@@ -5,18 +10,14 @@ Node3D
 OptionButton
 MenuButton
 VehicleWheel3D
-Label
 Camera3D
 Control
-Button
 Panel
 TextureRect
 MultiplayerSpawner
 HBoxContainer
 AspectRatioContainer
 Label3D
-VBoxContainer
-HSeparator
 LineEdit
 CanvasLayer
 CollisionShape3D
@@ -29,4 +30,3 @@ Node
 AudioStreamPlayer3D
 GPUParticles3D
 DirectionalLight3D
-WorldEnvironment
