@@ -1,52 +1,56 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1693086759
+::res://::1693155983
 Anton-Regular.ttf::FontFile::2728444035226403110::1686504995::1686505000::1::::<><>::
+Assets.gd::GDScript::-1::1693143454::0::1::::<>Node<>::
 carSelector.gd::GDScript::-1::1687205939::0::1::::<>OptionButton<>::
-default_bus_layout.tres::AudioBusLayout::3363066154546875535::1687124716::0::1::::<><>::
+default_bus_layout.tres::AudioBusLayout::3363066154546875535::1693088746::0::1::::<><>::
 Drift particles.gd::GDScript::-1::1686691420::0::1::::<>GPUParticles3D<>::
 Drift particles.tscn::PackedScene::2916012935865918524::1686771165::0::1::::<><>::uid://dyo53ev3n1jbe
 drift.wav::AudioStreamWAV::2791518504614586680::1686513026::1686513028::1::::<><>::
 engine.ogg::AudioStreamOggVorbis::4412336684526710014::1686514025::1686514092::1::::<><>::
-export_presets.cfg::TextFile::-1::1687207358::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1693089369::0::1::::<><>::
 icon.png::CompressedTexture2D::2243369455847394727::1687202446::1686602141::1::::<><>::
 icon.svg::CompressedTexture2D::1145211409866008096::1686495558::1686495565::1::::<><>::
 info.gd::GDScript::-1::1687206711::0::1::::<>Node<>::
 Lobby.gd::GDScript::-1::1687205974::0::1::::<>Control<>::
-Lobby.tscn::PackedScene::4233865489043410330::1693086759::0::1::::<><>::res://Lobby.gd<>uid://dkfgeooa7bp5d::::res://Theme.tres
-main.tscn::PackedScene::8155934220074444092::1693086759::0::1::::<><>::res://multiplayer.gd<>uid://c4bwsc68cijj3::::res://menu.tscn
+Lobby.tscn::PackedScene::4233865489043410330::1693155982::0::1::::<><>::res://Lobby.gd<>uid://dkfgeooa7bp5d::::res://Theme.tres<>res://Map_selector.gd
+main.tscn::PackedScene::8155934220074444092::1693155981::0::1::::<><>::res://multiplayer.gd<>uid://c4bwsc68cijj3::::res://menu.tscn
+Map.gd::GDScript::-1::1693154710::0::1::::<>Node3D<>::
+Map.tscn::PackedScene::1413891412930676685::1693155983::0::1::::<><>::uid://k81j8x8rgf5e::::res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib<>res://Map.gd<>uid://7qwuf6llo8v1::::res://kenney_racing-kit/Models/OBJ format/Roads.meshlib<>uid://crfdf2bq8fvfi::::res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib
 map_assets.meshlib::MeshLibrary::2264023401693336176::1693084579::0::1::::<><>::uid://chf5bkd2viqen
-menu.gd::GDScript::-1::1693085467::0::1::::<>Control<>::
-menu.tscn::PackedScene::6811750283212355378::1693086759::0::1::::<><>::res://menu.gd<>uid://dl6dh7lfyq6ph::::res://world.tscn
-multiplayer.gd::GDScript::-1::1687120824::0::1::::<>Node<>::
+Map_selector.gd::GDScript::-1::1693146034::0::1::::<>OptionButton<>::
+menu.gd::GDScript::-1::1693141624::0::1::::<>Control<>::
+menu.tscn::PackedScene::6811750283212355378::1693155982::0::1::::<><>::res://menu.gd<>uid://dl6dh7lfyq6ph::::res://world.tscn
+multiplayer.gd::GDScript::-1::1693155279::0::1::::<>Node<>::
 player.gd::GDScript::-1::1688597483::0::1::::<>Node3D<>::
-player.tscn::PackedScene::4418079410336299591::1693086759::0::1::::<><>::res://player.gd<>uid://be4xcsjidytqk::::res://Anton-Regular.ttf<>uid://dndwowxoxd7r5::::res://Bilar/SUV/suv.png<>uid://cmnxq8f4vrpod::::res://Bilar/Sedan/sedan.png<>res://carSelector.gd<>uid://bof7hnopsnxuh::::res://Bilar/Van/van.png<>res://Vehicles.gd<>uid://snurk671r3e7::::res://Bilar/SUV/suv.tscn<>uid://roicenvbek7i::::res://Bilar/Sedan/sedan.tscn<>uid://bt2bfiu7o1gni::::res://Bilar/Van/Van.tscn
+player.tscn::PackedScene::4418079410336299591::1693155982::0::1::::<><>::res://player.gd<>uid://be4xcsjidytqk::::res://Anton-Regular.ttf<>uid://dndwowxoxd7r5::::res://Bilar/SUV/suv.png<>uid://cmnxq8f4vrpod::::res://Bilar/Sedan/sedan.png<>res://carSelector.gd<>uid://bof7hnopsnxuh::::res://Bilar/Van/van.png<>res://Vehicles.gd<>uid://snurk671r3e7::::res://Bilar/SUV/suv.tscn<>uid://roicenvbek7i::::res://Bilar/Sedan/sedan.tscn<>uid://bt2bfiu7o1gni::::res://Bilar/Van/Van.tscn
 PlayerMenuCard.gd::GDScript::-1::1687178132::0::1::::<>AspectRatioContainer<>::
-PlayerMenuCard.tscn::PackedScene::982768614299881953::1693086759::0::1::::<><>::res://PlayerMenuCard.gd<>uid://dkfgeooa7bp5d::::res://Theme.tres
-Players.gd::GDScript::-1::1686863773::0::1::::<>Node3D<>::
+PlayerMenuCard.tscn::PackedScene::982768614299881953::1693088139::0::1::::<><>::res://PlayerMenuCard.gd<>uid://dkfgeooa7bp5d
+Players.gd::GDScript::-1::1693143106::0::1::::<>Node3D<>::
 smoke_07.png::CompressedTexture2D::8874567342786138154::1686511356::1686511360::1::::<><>::
-Theme.tres::Theme::7871844578359128515::1693085239::0::1::::<><>::uid://be4xcsjidytqk::::res://Anton-Regular.ttf
+Theme.tres::Theme::7871844578359128515::1693142989::0::1::::<><>::uid://be4xcsjidytqk::::res://Anton-Regular.ttf
 Vehicles.gd::GDScript::-1::1687209629::0::1::::<>Node3D<>::
-world.tscn::PackedScene::7995531391009113697::1693086759::0::1::::<><>::uid://bwaiqby448asb::::res://maps/1.tscn<>res://Players.gd
+world.tscn::PackedScene::7995531391009113697::1693155981::0::1::::<><>::res://Players.gd<>uid://ue5t5i2axcqn::::res://Map.tscn
 ::res://baked light/::1686528061
 world.VoxelGI_data.res::VoxelGIData::3863774714258953980::1686528061::0::1::::<><>::
 ::res://Bilar/::1687209011
 vehicle performance.gd::GDScript::-1::1687209011::0::1::::<>VehicleBody3D<>::
-::res://Bilar/Sedan/::1693086759
+::res://Bilar/Sedan/::1693155982
 sedan.glb::PackedScene::7592326478492692759::1658617505::1686773689::1::::<><>::
 sedan.png::CompressedTexture2D::5643371207722427987::1658617522::1686773689::1::::<><>::
-sedan.tscn::PackedScene::1222601169064836992::1693086759::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q::::res://engine.ogg
-::res://Bilar/SUV/::1693086772
-suv.glb::PackedScene::2211897304803597282::1658617505::1693086772::1::::<><>::
-suv.png::CompressedTexture2D::8079272118302626152::1658617522::1693086772::1::::<><>::
-suv.tscn::PackedScene::1291481369250889856::1693086759::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q
-::res://Bilar/Suv/::1693086772
-suv.glb::PackedScene::2211897304803597282::1658617505::1693086772::1::::<><>::
-suv.png::CompressedTexture2D::8079272118302626152::1658617522::1693086772::1::::<><>::
-suv.tscn::PackedScene::1291481369250889856::1693086759::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q::::res://engine.ogg
-::res://Bilar/Van/::1693086759
+sedan.tscn::PackedScene::1222601169064836992::1693155982::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q::::res://engine.ogg
+::res://Bilar/SUV/::1693162799
+suv.glb::PackedScene::2211897304803597282::1658617505::1693162799::1::::<><>::
+suv.png::CompressedTexture2D::8079272118302626152::1658617522::1693162799::1::::<><>::
+suv.tscn::PackedScene::1291481369250889856::1693155982::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q
+::res://Bilar/Suv/::1693162799
+suv.glb::PackedScene::2211897304803597282::1658617505::1693162845::1::::<><>::
+suv.png::CompressedTexture2D::8079272118302626152::1658617522::1693162844::1::::<><>::
+suv.tscn::PackedScene::1291481369250889856::1693155982::0::1::::<><>::res://Bilar/vehicle performance.gd<>uid://b34msm4sac68q::::res://engine.ogg
+::res://Bilar/Van/::1693088140
 van.glb::PackedScene::3893347771325488480::1658617507::1687206384::1::::<><>::
 van.png::CompressedTexture2D::3381342532858651763::1658617522::1687206384::1::::<><>::
-Van.tscn::PackedScene::3775817010694182282::1693086759::0::1::::<><>::uid://b34msm4sac68q::::res://engine.ogg<>res://Bilar/vehicle performance.gd
+Van.tscn::PackedScene::3775817010694182282::1693088140::0::1::::<><>::uid://b34msm4sac68q
 ::res://kenney_car-kit/::1686498104
 License.txt::TextFile::-1::1658617497::0::1::::<><>::
 Preview.png::CompressedTexture2D::5886305975902949475::1658617522::1686498104::1::::<><>::
@@ -108,13 +112,13 @@ License.txt::TextFile::-1::1686497961::0::1::::<><>::
 Preview.png::CompressedTexture2D::2505502204641361327::1686497972::1686498003::1::::<><>::
 Sample.png::CompressedTexture2D::2822106805689395043::1686497972::1686498003::1::::<><>::
 ::res://kenney_racing-kit/Models/::1686499576
-::res://kenney_racing-kit/Models/OBJ format/::1693084579
+::res://kenney_racing-kit/Models/OBJ format/::1693155983
 Decorations.meshlib::MeshLibrary::5976566098397420542::1686564639::0::1::::<><>::uid://chf5bkd2viqen
 Decorations.tscn::PackedScene::8365270832892600653::1686566721::0::1::::<><>::uid://df3arkpihd4wy
-Ground.tscn::PackedScene::4399265899933032218::1686565845::0::1::::<><>::uid://qkcd7tojvcxq
+Ground.tscn::PackedScene::4399265899933032218::1693155983::0::1::::<><>::uid://qkcd7tojvcxq::::res://kenney_racing-kit/Models/OBJ format/Grounds/grass.obj
 Grounds.meshlib::MeshLibrary::771609386544754228::1686565404::0::1::::<><>::
-Roads.meshlib::MeshLibrary::2280444841221718952::1686775542::0::1::::<><>::
-Roads.tscn::PackedScene::4233151074206858296::1693084579::0::1::::<><>::uid://dn8t0ull7mpsp
+Roads.meshlib::MeshLibrary::2280444841221718952::1693146472::0::1::::<><>::
+Roads.tscn::PackedScene::4233151074206858296::1693155983::0::1::::<><>::uid://dn8t0ull7mpsp::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraight.obj<>uid://6gagqhta3ygn::::res://kenney_racing-kit/Models/OBJ format/Roads/roadBump.obj<>uid://11vyqv4avdrc::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerBridgeLarge.obj<>uid://dh8gelivd8ciq::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStartPositions.obj<>uid://cxmxmurgiljhy::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStart.obj<>uid://c3jl2b2wwc5im::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerBridgeLarger.obj<>uid://sudsniidcqqj::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerBridgeSmall.obj<>uid://g3bvcsaibpxh::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCrossing.obj<>uid://ccvaitupn3car::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCurvedSplit.obj<>uid://dyiw0abn5o2su::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCurved.obj<>uid://c1m2f5lt2uyd::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLargeSand.obj<>uid://12n3x730gyhd::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLarge.obj<>uid://4mshydv7ygbl::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLargeSandInner.obj<>uid://b7w1xvqvgymq0::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLargerSand.obj<>uid://c0ob0y3es3mxh::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLarger.obj<>uid://dnqq1pjwh8qyr::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerLargerSandInner.obj<>uid://gbb8dww5jl0k::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerSmall.obj<>uid://bes22co0gkqwb::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerSmallSand.obj<>uid://db6fgvh7ajqmy::::res://kenney_racing-kit/Models/OBJ format/Roads/roadCornerSmallSquare.obj<>uid://c5qtgcfgat3ti::::res://kenney_racing-kit/Models/OBJ format/Roads/roadEnd.obj<>uid://dag3xms427kgy::::res://kenney_racing-kit/Models/OBJ format/Roads/roadPitEntry.obj<>uid://qfniolajwwf7::::res://kenney_racing-kit/Models/OBJ format/Roads/roadPitStraight.obj<>uid://cx3prx447q5d::::res://kenney_racing-kit/Models/OBJ format/Roads/roadRamp.obj<>uid://cy8ubtlunody7::::res://kenney_racing-kit/Models/OBJ format/Roads/roadRampLongCurved.obj<>uid://cx8hevrimurx8::::res://kenney_racing-kit/Models/OBJ format/Roads/roadRampLongCurvedWall.obj<>uid://baf2fm2gllfxx::::res://kenney_racing-kit/Models/OBJ format/Roads/roadRampLongWall.obj<>uid://ile7a3ncpdqr::::res://kenney_racing-kit/Models/OBJ format/Roads/roadRampWall.obj<>uid://bre12h5ybufbf::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSide.obj<>uid://dfalpy604obvb::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplit.obj<>uid://unoybymexqi7::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplitLarge.obj<>uid://c0y4d73mb3umt::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplitLarger.obj<>uid://7oi1mj25qn2q::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplitRound.obj<>uid://kp27bg8jwxka::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplitRoundLarge.obj<>uid://bdpeicfylmdsr::::res://kenney_racing-kit/Models/OBJ format/Roads/roadSplitSmall.obj<>uid://cg86gwba7jdu1::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightArrow.obj<>uid://dk2orfrw1wnsp::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightBridge.obj<>uid://cv21no1abl81a::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightBridgeMid.obj<>uid://kri034vjvcb4::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightBridgeStart.obj<>uid://biygn64561v6o::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightLong.obj<>uid://clafynte3ul87::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightLongBump.obj<>uid://c6iouxc5xi38a::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightLongBumpRound.obj<>uid://botjwlwhhootn::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightLongMid.obj<>uid://chmgnrdd6voqh::::res://kenney_racing-kit/Models/OBJ format/Roads/roadStraightSkew.obj
 ::res://kenney_racing-kit/Models/OBJ format/Decorations/::1686524290
 bannerTowerGreen.obj::Mesh::7568039753658079680::1686497967::1686523980::1::::<><>::
 bannerTowerRed.obj::Mesh::7923388159399247447::1686497967::1686523980::1::::<><>::
@@ -228,22 +232,21 @@ roadStraightLongBump.obj::Mesh::5545265803796902990::1686497970::1686523991::1::
 roadStraightLongBumpRound.obj::Mesh::6966097508495321154::1686497970::1686523991::1::::<><>::
 roadStraightLongMid.obj::Mesh::3408874024424014219::1686497970::1686523991::1::::<><>::
 roadStraightSkew.obj::Mesh::5289324220888449047::1686497970::1686523991::1::::<><>::
-::res://Map editor/::1693086760
-Assets.gd::GDScript::-1::1693083489::0::1::::<>Node<>::
-BuildSelector.gd::GDScript::-1::1693086030::0::1::::<>HBoxContainer<>::
-camera.gd::GDScript::-1::1693085999::0::1::::<>Camera3D<>::
-GridMapBP.gd::GDScript::-1::1692990677::0::1::::<>GridMap<>::
-gridMaterial.tres::StandardMaterial3D::8304995846742261471::1693085613::0::1::::<><>::uid://dy3ssen5sdtfj::::res://Map editor/ruta.png
-ItemSelector.gd::GDScript::-1::1693085920::0::1::::<>ItemList<>::
+::res://Map editor/::1693155983
+level_editor_BuildSelector.gd::GDScript::-1::1693086030::0::1::::<>HBoxContainer<>::
+level_editor_camera.gd::GDScript::-1::1693085999::0::1::::<>Camera3D<>::
+level_editor_ESC_menu.gd::GDScript::-1::1693144143::0::1::::<>PanelContainer<>::
+level_editor_GridMapBP.gd::GDScript::-1::1692990677::0::1::::<>GridMap<>::
+level_editor_gridMaterial.tres::StandardMaterial3D::8304995846742261471::1693143809::0::1::::<><>::uid://dy3ssen5sdtfj
+level_editor_ItemSelector.gd::GDScript::-1::1693085920::0::1::::<>ItemList<>::
+level_editor_map.gd::GDScript::-1::1693155358::0::1::::<>Node3D<>::
+level_editor_maplist.gd::GDScript::-1::1693086620::0::1::::<>ItemList<>::
 level_editor_menu.gd::GDScript::-1::1693085496::0::1::::<>Control<>::
-level_editor_menu.tscn::PackedScene::7623577013854806704::1693086760::0::1::::<><>::uid://dkfgeooa7bp5d::::res://Theme.tres<>res://Map editor/maplist.gd<>res://Map editor/level_editor_menu.gd<>res://Map editor/name_popup.gd
-map.gd::GDScript::-1::1693084118::0::1::::<>Node3D<>::
-maplist.gd::GDScript::-1::1693086620::0::1::::<>ItemList<>::
-map_editor_main.tscn::PackedScene::7553328833593451457::1693086760::0::1::::<><>::uid://7qwuf6llo8v1::::res://kenney_racing-kit/Models/OBJ format/Roads.meshlib<>res://Map editor/map.gd<>res://Map editor/camera.gd<>uid://k81j8x8rgf5e::::res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib<>res://Map editor/placement.gd<>uid://crfdf2bq8fvfi::::res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib<>res://Map editor/placementFloor.gd<>res://Map editor/GridMapBP.gd<>uid://dqlack4l4pi7x::::res://Map editor/gridMaterial.tres<>res://Map editor/ItemSelector.gd<>uid://dkfgeooa7bp5d::::res://Theme.tres<>res://Map editor/BuildSelector.gd
-name_popup.gd::GDScript::-1::1692972243::0::1::::<>Panel<>::
-opacity.tres::StandardMaterial3D::-1::1693082998::0::1::::<><>::
-placement.gd::GDScript::-1::1693085947::0::1::::<>RayCast3D<>::
-placementFloor.gd::GDScript::-1::1693085913::0::1::::<>StaticBody3D<>::
-ruta.png::CompressedTexture2D::8902722157228953399::1692914286::1693085602::1::::<><>::
-::res://maps/::1693086759
-1.tscn::PackedScene::3931089643330758365::1693086759::0::1::::<><>::uid://crfdf2bq8fvfi::::res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib<>uid://7qwuf6llo8v1::::res://kenney_racing-kit/Models/OBJ format/Roads.meshlib
+level_editor_menu.tscn::PackedScene::7623577013854806704::1693155983::0::1::::<><>::uid://dkfgeooa7bp5d::::res://Theme.tres<>res://Map editor/level_editor_menu.gd<>res://Map editor/level_editor_maplist.gd<>res://Map editor/level_editor_name_popup.gd
+level_editor_name_popup.gd::GDScript::-1::1692972243::0::1::::<>Panel<>::
+level_editor_placement.gd::GDScript::-1::1693085947::0::1::::<>RayCast3D<>::
+level_editor_placementFloor.gd::GDScript::-1::1693085913::0::1::::<>StaticBody3D<>::
+level_editor_ruta.png::CompressedTexture2D::8902722157228953399::1692914286::1693143809::1::::<><>::
+map_editor_main.tscn::PackedScene::7553328833593451457::1693155983::0::1::::<><>::res://Map editor/level_editor_map.gd<>uid://7qwuf6llo8v1::::res://kenney_racing-kit/Models/OBJ format/Roads.meshlib<>uid://k81j8x8rgf5e::::res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib<>uid://crfdf2bq8fvfi::::res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib<>res://Map editor/level_editor_GridMapBP.gd<>res://Map editor/level_editor_camera.gd<>res://Map editor/level_editor_placement.gd<>res://Map editor/level_editor_placementFloor.gd<>uid://dqlack4l4pi7x::::res://Map editor/level_editor_gridMaterial.tres<>uid://dkfgeooa7bp5d::::res://Theme.tres<>res://Map editor/level_editor_ItemSelector.gd<>res://Map editor/level_editor_BuildSelector.gd<>res://Map editor/level_editor_ESC_menu.gd
+::res://maps/::1693155981
+1.tscn::PackedScene::3931089643330758365::1693155981::0::1::::<><>::uid://crfdf2bq8fvfi::::res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib<>uid://7qwuf6llo8v1::::res://kenney_racing-kit/Models/OBJ format/Roads.meshlib

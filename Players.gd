@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var startPositions = get_parent().get_node("map/startPositions")
+@onready var startPositions = get_parent().get_node("Map/startPositions")
 
 var connected = false
 

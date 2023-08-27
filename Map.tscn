@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://ue5t5i2axcqn"]
+
+[ext_resource type="MeshLibrary" uid="uid://k81j8x8rgf5e" path="res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib" id="1_5erwg"]
+[ext_resource type="Script" path="res://Map.gd" id="1_ckea3"]
+[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="2_gp7dw"]
+[ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="3_pisym"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxsu5"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Map" type="Node3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+script = ExtResource("1_ckea3")
+
+[node name="Ground" type="GridMap" parent="."]
+mesh_library = ExtResource("1_5erwg")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="Road" type="GridMap" parent="."]
+mesh_library = ExtResource("2_gp7dw")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="Decoration" type="GridMap" parent="."]
+mesh_library = ExtResource("3_pisym")
+cell_size = Vector3(1, 0.5, 1)
+cell_center_y = false
+
+[node name="startPositions" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="startPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328, 0.05, 0.26)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="startPositions/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+shape = SubResource("BoxShape3D_gxsu5")
+
+[node name="Area3D2" type="Area3D" parent="startPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.673514, 0.05, 0.772156)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="startPositions/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+shape = SubResource("BoxShape3D_gxsu5")
+
+[node name="Area3D3" type="Area3D" parent="startPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328, 0.05, 1.26444)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="startPositions/Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+shape = SubResource("BoxShape3D_gxsu5")
+
+[node name="Area3D4" type="Area3D" parent="startPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.673514, 0.05, 1.76742)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="startPositions/Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+shape = SubResource("BoxShape3D_gxsu5")

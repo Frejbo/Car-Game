@@ -49,6 +49,8 @@ func joinGame(IPtext : String) -> void:
 	multiplayer.connected_to_server.connect(connected)
 
 func connected():
+	print("I connected")
+	
 	add_display_name.rpc(Info.PlayerName)
 #	place_car(peer_id)
 

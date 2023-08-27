@@ -1,21 +1,21 @@
 [gd_scene load_steps=23 format=3 uid="uid://dfu5htavdqyl2"]
 
+[ext_resource type="Script" path="res://Map editor/level_editor_map.gd" id="1_abixf"]
 [ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="1_xeqqe"]
-[ext_resource type="Script" path="res://Map editor/map.gd" id="2_h1yk7"]
-[ext_resource type="Script" path="res://Map editor/camera.gd" id="2_t7us7"]
 [ext_resource type="MeshLibrary" uid="uid://k81j8x8rgf5e" path="res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib" id="2_yc0ho"]
-[ext_resource type="Script" path="res://Map editor/placement.gd" id="3_dcm38"]
 [ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="4_3myh7"]
-[ext_resource type="Script" path="res://Map editor/placementFloor.gd" id="4_lrlul"]
-[ext_resource type="Script" path="res://Map editor/GridMapBP.gd" id="5_qekkv"]
-[ext_resource type="Material" uid="uid://dqlack4l4pi7x" path="res://Map editor/gridMaterial.tres" id="6_y64r5"]
-[ext_resource type="Script" path="res://Map editor/ItemSelector.gd" id="8_ueagx"]
+[ext_resource type="Script" path="res://Map editor/level_editor_GridMapBP.gd" id="5_sbfu2"]
+[ext_resource type="Script" path="res://Map editor/level_editor_camera.gd" id="6_pemoh"]
+[ext_resource type="Script" path="res://Map editor/level_editor_placement.gd" id="7_7ve2c"]
+[ext_resource type="Script" path="res://Map editor/level_editor_placementFloor.gd" id="8_wugav"]
+[ext_resource type="Material" uid="uid://dqlack4l4pi7x" path="res://Map editor/level_editor_gridMaterial.tres" id="9_3vv6n"]
 [ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="10_5ojdn"]
-[ext_resource type="Script" path="res://Map editor/BuildSelector.gd" id="10_qm8bd"]
-[ext_resource type="Script" path="res://Map editor/ESC_menu.gd" id="13_51o1v"]
+[ext_resource type="Script" path="res://Map editor/level_editor_ItemSelector.gd" id="11_gme1w"]
+[ext_resource type="Script" path="res://Map editor/level_editor_BuildSelector.gd" id="12_v57uk"]
+[ext_resource type="Script" path="res://Map editor/level_editor_ESC_menu.gd" id="13_q8518"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jxmxm"]
-material = ExtResource("6_y64r5")
+material = ExtResource("9_3vv6n")
 size = Vector3(50, 0.01, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tptdi"]
@@ -62,7 +62,7 @@ material = SubResource("StandardMaterial3D_a7632")
 size = Vector3(0.05, 0.05, 5)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("2_h1yk7")
+script = ExtResource("1_abixf")
 
 [node name="Ground" type="GridMap" parent="."]
 mesh_library = ExtResource("2_yc0ho")
@@ -84,23 +84,23 @@ cell_size = Vector3(1, 0.5, 1)
 cell_center_y = false
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("5_qekkv")
+script = ExtResource("5_sbfu2")
 
 [node name="camera_rot_y" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Camera3D_rot_x" type="Camera3D" parent="camera_rot_y"]
-script = ExtResource("2_t7us7")
+script = ExtResource("6_pemoh")
 
 [node name="RayCast3D" type="RayCast3D" parent="camera_rot_y/Camera3D_rot_x"]
 target_position = Vector3(0, 0, -20)
 collision_mask = 2
-script = ExtResource("3_dcm38")
+script = ExtResource("7_7ve2c")
 
 [node name="placementFloor" type="StaticBody3D" parent="."]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("4_lrlul")
+script = ExtResource("8_wugav")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="placementFloor"]
 mesh = SubResource("BoxMesh_jxmxm")
@@ -151,7 +151,7 @@ max_columns = 10
 same_column_width = true
 fixed_column_width = 245
 icon_mode = 0
-script = ExtResource("8_ueagx")
+script = ExtResource("11_gme1w")
 
 [node name="BuildSelector" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
@@ -161,7 +161,7 @@ grow_horizontal = 2
 theme = ExtResource("10_5ojdn")
 theme_override_constants/separation = 20
 alignment = 1
-script = ExtResource("10_qm8bd")
+script = ExtResource("12_v57uk")
 
 [node name="Ground" type="Button" parent="CanvasLayer/BuildSelector"]
 layout_mode = 2
@@ -182,6 +182,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_axrkf")
 text = "Decoration"
 
 [node name="ESC_menu" type="PanelContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -195,7 +196,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_5ojdn")
 theme_override_styles/panel = SubResource("StyleBoxFlat_2yo71")
-script = ExtResource("13_51o1v")
+script = ExtResource("13_q8518")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ESC_menu"]
 layout_mode = 2

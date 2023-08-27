@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1k6e72r5b4r3"]
+[gd_scene load_steps=4 format=3 uid="uid://b1k6e72r5b4r3"]
 
 [ext_resource type="Script" path="res://Lobby.gd" id="1_cp7iu"]
 [ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="2_kwkjj"]
+[ext_resource type="Script" path="res://Map_selector.gd" id="3_e1u8n"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -57,5 +58,17 @@ theme = ExtResource("2_kwkjj")
 theme_override_font_sizes/font_size = 64
 text = "START"
 
+[node name="Map_selector" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 92.0
+offset_bottom = 48.0
+grow_horizontal = 2
+script = ExtResource("3_e1u8n")
+
 [connection signal="timeout" from="update cards" to="." method="update_cards"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="item_selected" from="Map_selector" to="Map_selector" method="_on_map_selected"]

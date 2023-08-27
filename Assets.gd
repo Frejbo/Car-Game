@@ -1,5 +1,7 @@
 extends Node
 
+const valid_startpos_tiles := [403103081]
+
 const Tiles := {
 	"Ground": {
 		3432542829: "Grass"

@@ -274,7 +274,6 @@ shape = SubResource("ConcavePolygonShape3D_pxyj2")
 
 [node name="RoadStartPositions" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-visible = false
 mesh = ExtResource("2_rju30")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStartPositions"]
@@ -634,6 +633,7 @@ shape = SubResource("ConcavePolygonShape3D_udf1m")
 
 [node name="RoadStraightLongBump" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.005, -0.5)
+visible = false
 mesh = ExtResource("37_3qqxq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLongBump"]
@@ -643,6 +643,7 @@ shape = SubResource("ConcavePolygonShape3D_5roqy")
 
 [node name="RoadStraightLongBumpRound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+visible = false
 mesh = ExtResource("38_n6h1c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraightLongBumpRound"]

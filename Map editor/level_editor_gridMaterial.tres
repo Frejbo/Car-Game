@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqlack4l4pi7x"]
 
-[ext_resource type="Texture2D" uid="uid://dy3ssen5sdtfj" path="res://Map editor/ruta.png" id="1_rhtdf"]
+[ext_resource type="Texture2D" uid="uid://dy3ssen5sdtfj" path="res://Map editor/level_editor_ruta.png" id="1_rhtdf"]
 
 [resource]
 transparency = 1

@@ -49,12 +49,14 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+visible = false
 mesh = SubResource("PlaneMesh_kbjo3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground" groups=["Ground"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jo50g")
+disabled = true
 
 [node name="startPositions" type="Node3D" parent="."]
 

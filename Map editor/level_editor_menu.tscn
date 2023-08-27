@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgu6g10cgu5fo"]
 
 [ext_resource type="Theme" uid="uid://dkfgeooa7bp5d" path="res://Theme.tres" id="1_51h1i"]
-[ext_resource type="Script" path="res://Map editor/maplist.gd" id="1_ldx85"]
 [ext_resource type="Script" path="res://Map editor/level_editor_menu.gd" id="1_x83qq"]
-[ext_resource type="Script" path="res://Map editor/name_popup.gd" id="3_l1ivd"]
+[ext_resource type="Script" path="res://Map editor/level_editor_maplist.gd" id="3_70ihp"]
+[ext_resource type="Script" path="res://Map editor/level_editor_name_popup.gd" id="4_tktuh"]
 
 [node name="map_editor_menu" type="Control"]
 layout_mode = 3
@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 max_columns = 10
 fixed_column_width = 200
-script = ExtResource("1_ldx85")
+script = ExtResource("3_70ihp")
 
 [node name="no_saved_maps" type="Label" parent="ItemList"]
 modulate = Color(1, 1, 1, 0.5)
@@ -90,7 +90,7 @@ offset_right = 150.0
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_l1ivd")
+script = ExtResource("4_tktuh")
 
 [node name="LineEdit" type="LineEdit" parent="name_popup"]
 layout_mode = 1

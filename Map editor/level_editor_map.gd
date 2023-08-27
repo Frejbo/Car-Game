@@ -4,8 +4,8 @@ var mapName := "Unknown map"
 @onready var working_gridmap : GridMap
 
 func _enter_tree() -> void:
-	for x in range(-20, 20):
-		for z in range(-20, 20):
+	for x in range(-15, 15):
+		for z in range(-15, 15):
 			$Ground.set_cell_item(Vector3(x, 0, z), 0)
 
 

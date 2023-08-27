@@ -14,7 +14,7 @@ func _on_exit_level_editor_pressed() -> void:
 	$VBoxContainer/Loading.show()
 	await get_tree().process_frame
 	await get_tree().process_frame # need 2 process_frames to pass for some reason, otherwise loading label wont show
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()

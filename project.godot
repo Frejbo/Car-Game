@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Info="*res://info.gd"
-Assets="*res://Map editor/Assets.gd"
+Assets="*res://Assets.gd"
 
 [display]
 

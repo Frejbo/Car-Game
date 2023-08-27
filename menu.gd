@@ -30,7 +30,21 @@ func _on_join_pressed() -> void:
 	
 	add_child(lobby.instantiate())
 	$VBoxContainer.hide()
-	set_last_used_car()
+	
+	# SHOULD RUN set_last_used_car() HERE # TODO
+	
+	# Need to wait for all players to load? before setting the car #FIXME
+#	await multiplayer.connected_to_server
+#	print(multiplayer.get_peers())
+#	for peer in multiplayer.get_peers():
+#		await $world/Players.child_entered_tree
+#	print(multiplayer.multiplayer_peer.get_connection_status())
+#	await get_tree().create_timer(.5).timeout # I guess this won't work on slow connections
+#	await multiplayer.multiplayer_peer.peer_connected
+#	await multiplayer.
+#	print(multiplayer.multiplayer_p<eer.get_connection_status())
+#	print("SETTING CAR")
+#	set_last_used_car()
 
 @rpc("call_local", "reliable")
 func start():
@@ -81,9 +95,10 @@ func prefill_last_values():
 	$VBoxContainer/HBoxContainer/IP.text = config.get_value("last_used", "IP")
 
 func set_last_used_car():
+#	await get_tree().create_timer(1).timeout
 	var config = ConfigFile.new()
 	config.load("user://config.cfg")
-	print(config.get_value("last_used", "car", 0))
+	print($world/Players.get_children())
 	$world/Players.get_node(str(multiplayer.get_unique_id())).set_car(config.get_value("last_used", "car", 0))
 
 

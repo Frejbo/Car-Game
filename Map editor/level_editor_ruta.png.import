@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy3ssen5sdtfj"
-path.s3tc="res://.godot/imported/ruta.png-fced269b3c848f6b24c514884544eb3a.s3tc.ctex"
+path.s3tc="res://.godot/imported/level_editor_ruta.png-d668b985f045251e6da9858e8a89e17a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Map editor/ruta.png"
-dest_files=["res://.godot/imported/ruta.png-fced269b3c848f6b24c514884544eb3a.s3tc.ctex"]
+source_file="res://Map editor/level_editor_ruta.png"
+dest_files=["res://.godot/imported/level_editor_ruta.png-d668b985f045251e6da9858e8a89e17a.s3tc.ctex"]
 
 [params]
 
