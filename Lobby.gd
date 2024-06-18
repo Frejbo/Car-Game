@@ -10,8 +10,15 @@ func _ready() -> void:
 		$wait_for_host.show()
 	
 	multiplayer.peer_disconnected.connect(remove_player_card)
-	multiplayer.peer_connected.connect(update_cards)
-	multiplayer.connected_to_server.connect(update_cards)
+	multiplayer.peer_connected.connect(
+		func():
+			print("Someone connected, "+ str(multiplayer.get_unique_id()))
+			update_cards)
+	multiplayer.connected_to_server.connect(
+		func():
+			await get_tree().create_timer(1).timeout
+			update_cards()
+			)
 
 func remove_player_card(player_id):
 	playerCards.erase(player_id)

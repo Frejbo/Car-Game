@@ -126,9 +126,12 @@ func set_engine_force(force:float) -> void:
 
 func set_brake_force(force:float) -> void:
 	for wheel in Vehicle.get_children():
+		
 		if not wheel is VehicleWheel3D: continue
 		wheel.brake = force
 
+func kidnap_child(nodePath : NodePath):
+	return get_node(nodePath)
 
 
 func _input(event: InputEvent) -> void:

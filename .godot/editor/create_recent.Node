@@ -1,3 +1,5 @@
+CollisionShape3D
+Area3D
 MultiplayerSpawner
 MultiplayerSynchronizer
 OptionButton
@@ -20,8 +22,6 @@ AspectRatioContainer
 Label3D
 LineEdit
 CanvasLayer
-CollisionShape3D
-Area3D
 Marker3D
 VoxelGI
 MultiMeshInstance3D

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwaiqby448asb"]
 
 [ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="1_gxdgl"]
-[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="2_f22h1"]
+[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/roads.meshlib" id="2_f22h1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4342g"]
 albedo_color = Color(0.309804, 0.568627, 0.341176, 1)

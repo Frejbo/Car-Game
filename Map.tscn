@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ue5t5i2axcqn"]
 
-[ext_resource type="MeshLibrary" uid="uid://k81j8x8rgf5e" path="res://kenney_racing-kit/Models/OBJ format/Grounds.meshlib" id="1_5erwg"]
+[ext_resource type="MeshLibrary" uid="uid://k81j8x8rgf5e" path="res://kenney_racing-kit/Models/OBJ format/grounds.meshlib" id="1_5erwg"]
 [ext_resource type="Script" path="res://Map.gd" id="1_ckea3"]
-[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/Roads.meshlib" id="2_gp7dw"]
+[ext_resource type="MeshLibrary" uid="uid://7qwuf6llo8v1" path="res://kenney_racing-kit/Models/OBJ format/roads.meshlib" id="2_gp7dw"]
 [ext_resource type="MeshLibrary" uid="uid://crfdf2bq8fvfi" path="res://kenney_racing-kit/Models/OBJ format/Decorations.meshlib" id="3_pisym"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxsu5"]
